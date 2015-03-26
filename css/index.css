@@ -1,0 +1,90 @@
+﻿img.index-show {
+	width: 600px;
+	height: 400px;
+}
+
+div.service-section {
+	background-color: #FDF0B2;
+	width: 100%;
+	height: 400px;
+	margin-top: 10px;
+}
+
+.clear-margin {
+	margin: 0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.bg-black {
+	width: 100%;
+	background-color: #000000;
+}
+
+.service {
+	margin: 20px;
+	border: 1px solid #FEC504;
+}
+
+.service-text {
+	color: #FEC504;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.orange-block {
+	width: 25%;
+	height: 260px;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+	padding-top: 20px;
+	float: left;
+	transition: transform 1s, display 1s;
+	transform: rotateY(180deg);
+}
+
+.orange-block:hover {
+	cursor: pointer;
+	transform: rotateY(0deg);
+}
+
+.orange-hidden {
+	display: none;
+	transform: rotateY(180deg);
+}
+
+.orange-hidden:hover {
+	display: block;
+	transform: rotateY(0deg);
+}
+
+.bc-orange3 {
+	background-color: #FEC504;
+}
+
+.bc-orange2 {
+	background-color: #FDF0B2;
+}
+
+.bc-orange1 {
+	background-color: #FDF6D0;
+}
+
+.bc-orange0 {
+	color: #FEC504;
+	border-bottom: 1px solid #FDF6D0;
+}
+
+@-webkit-keyframes clipboard
+{
+	from {rotateX(0deg);}
+	to {rotateX(180deg);}
+}
+
+.ani-clipboard {
+	-webkit-animation: clipboard 1s;
+}

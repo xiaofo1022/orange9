@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9</title>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/header.css"/>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+@-webkit-keyframes showimg
+{
+	from {opacity:0.0;}
+	to {opacity:1.0;}
+}
+
+div.border-bottom {
+	border-bottom:1px solid #FDF6D0;
+}
+
+div.border-top {
+	border-top:1px solid #FDF6D0;
+}
+
+.orange-less-bc {
+	background-color: #FFFFFF;
+	overflow-x: hidden;
+}
+
+div.photo-frame {
+	padding-bottom: 20px;
+	margin: 10px;
+	float: left;
+	background-color: #FFFFFF;
+	
+	box-shadow: 0px 0px 5px rgba(254, 197, 4, 0.8);
+}
+
+div.photo-frame img {
+	width: 200px;
+	transition: opacity 1s;
+	-webkit-animation: showimg 1s;
+}
+</style>
+</head>
+<body>
+<div class="header border-bottom">
+	<img class="logo" src="images/logo.jpg"/>
+	<span>九橙</span>
+	<div class="nav-btn">客户区</div>
+	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn nav-btn-selected">作品展示</div>
+	<div class="nav-btn">在线预约</div>
+	<div class="nav-btn">服务套餐</div>
+	<div class="nav-btn">首页</div>
+</div>
+
+<div class="row orange-less-bc">
+<div id="img-container" class="col-lg-offset-1 col-lg-11">
+	<div class="photo-frame">
+		<img src="images/show/1.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/2.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/3.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/4.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/5.jpg"/>
+	</div>
+	
+	<div class="photo-frame">
+		<img src="images/show/6.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/7.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/8.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/9.jpg"/>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/10.jpg"/>
+	</div>
+</div>
+</div>
+
+<div class="footer border-top">
+	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
+</div>
+
+<script>
+	var imgList = $(".photo-frame");
+	showImgs();
+	function showImgs() {
+		for (var i in imgList) {
+			//imgList[i].style.display = "block";
+		}
+	}
+</script>
+</body>
+</html>
