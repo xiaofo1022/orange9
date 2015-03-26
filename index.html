@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9</title>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<style>
+	@CHARSET "UTF-8";
+
+	body {
+		font-family: "Microsoft YaHei";
+	}
+	
+	.fleft {
+		float: left;
+	}
+	
+	div.header {
+		position: aboslute;
+		top: 10px;
+		border-bottom: 1px solid white;
+		height: 60px;
+		padding: 10px;
+		color: #FEC504;
+		font-size: 18px;
+	}
+	
+	img.logo {
+		width: 40px;
+		height: 40px;
+		margin-left: 40px;
+		margin-right: 10px;
+		clear: both;
+	}
+	
+	div.nav-btn {
+		border: 1px solid white;
+		background-color: #FFFFFF;
+		color: FEC504;
+		font-size: 15px;
+		float: right;
+		width: 100px;
+		height: 40px;
+		text-align: left;
+		padding: 8px 10px;
+		margin: 0px 10px;
+		transition: background-color 0.5s, color 0.5s;
+	}
+	
+	div.nav-btn:hover {
+		cursor: pointer;
+		background-color: #FEC504;
+		color: white;
+	}
+	
+	div.nav-btn-selected {
+		background-color: #FEC504;
+		color: white;
+	}
+	
+	img.index-show {
+		width: 600px;
+		height: 400px;
+	}
+	
+	div.service-section {
+		background-color: #FDF0B2;
+		width: 100%;
+		height: 400px;
+		margin-top: 10px;
+	}
+	
+	.clear-margin {
+		margin: 0px;
+	}
+	
+	.center {
+		text-align: center;
+	}
+	
+	.bg-black {
+		width: 100%;
+		background-color: #000000;
+	}
+	
+	.service {
+		margin: 20px;
+		border: 1px solid #FEC504;
+	}
+	
+	.service-text {
+		color: #FEC504;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.orange-block {
+		width: 25%;
+		height: 260px;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		color: #FFFFFF;
+		padding-top: 20px;
+		float: left;
+		transition: transform 1s, display 1s;
+		transform: rotateY(180deg);
+	}
+	
+	.orange-block:hover {
+		cursor: pointer;
+		transform: rotateY(0deg);
+	}
+	
+	.orange-hidden {
+		display: none;
+		transform: rotateY(180deg);
+	}
+	
+	.orange-hidden:hover {
+		display: block;
+		transform: rotateY(0deg);
+	}
+	
+	.bc-orange3 {
+		background-color: #FEC504;
+	}
+	
+	.bc-orange2 {
+		background-color: #FDF0B2;
+	}
+	
+	.bc-orange1 {
+		background-color: #FDF6D0;
+	}
+	
+	.bc-orange0 {
+		color: #FEC504;
+		border-bottom: 1px solid #FDF6D0;
+	}
+	
+	div.footer {
+		clear: both;
+		border-top: 0px solid #FEC504;
+		text-align: center;
+		padding: 10px;
+		color: #FEC504;
+		font-size: 10px;
+	}
+	
+	@-webkit-keyframes clipboard
+	{
+		from {rotateX(0deg);}
+		to {rotateX(180deg);}
+	}
+	
+	.ani-clipboard {
+		-webkit-animation: clipboard 1s;
+	}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+	<img class="logo" src="images/logo.jpg"/>
+	<span>九橙</span>
+	<div class="nav-btn">客户区</div>
+	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn">作品展示</div>
+	<div class="nav-btn">在线预约</div>
+	<div class="nav-btn">服务套餐</div>
+	<div class="nav-btn nav-btn-selected">首页</div>
+</div>
+
+<div id="carousel-index-img" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#carousel-index-img" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-index-img" data-slide-to="1"></li>
+		<li data-target="#carousel-index-img" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<div class="center bg-black">
+				<img class="index-show" src="images/zy3.jpg"/>
+			</div>
+		</div>
+		<div class="item center">
+			<div class="center bg-black">
+				<img class="index-show" src="images/zy2.jpg"/>
+			</div>
+		</div>
+		<div class="item center">
+			<div class="center bg-black">
+				<img class="index-show" src="images/zy1.jpg"/>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#carousel-index-img" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	</a>
+	<a class="right carousel-control" href="#carousel-index-img" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	</a>
+</div>
+
+<div>
+	<div class="orange-block bc-orange0">液</div>
+	<div class="orange-block bc-orange1">氧</div>
+	<div class="orange-block bc-orange2">罐</div>
+	<div class="orange-block bc-orange3">头</div>
+</div>
+
+<div class="footer">
+	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
+</div>
+
+<script>
+	function showHidden(board) {
+		console.log(board);
+	}
+</script>
+</body>
+</html>
