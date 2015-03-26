@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Orange 9</title>
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap.css"/>
 <link rel="stylesheet" href="css/header.css"/>
 <link rel="stylesheet" href="css/index.css"/>
 <script src="js/jquery-1.11.2.min.js"></script>
@@ -15,7 +15,7 @@
 	<span>九橙</span>
 	<div class="nav-btn">客户区</div>
 	<div class="nav-btn">常见问题</div>
-	<div class="nav-btn">作品展示</div>
+	<div class="nav-btn" onclick="show()">作品展示</div>
 	<div class="nav-btn">在线预约</div>
 	<div class="nav-btn">服务套餐</div>
 	<div class="nav-btn nav-btn-selected">首页</div>
@@ -30,38 +30,65 @@
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
 			<div class="center bg-black">
-				<img class="index-show" src="images/zy3.jpg"/>
+				<img class="index-show" src="images/model1.jpg"/>
 			</div>
 		</div>
 		<div class="item center">
 			<div class="center bg-black">
-				<img class="index-show" src="images/zy2.jpg"/>
+				<img class="index-show" src="images/model2.jpg"/>
 			</div>
 		</div>
 		<div class="item center">
 			<div class="center bg-black">
-				<img class="index-show" src="images/zy1.jpg"/>
+				<img class="index-show" src="images/model3.jpg"/>
 			</div>
 		</div>
 	</div>
-	<a class="left carousel-control" href="#carousel-index-img" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	<a class="left carousel-control" style="background-image:white;" href="#carousel-index-img" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" style="color:#FEC504;" aria-hidden="true"></span>
 	</a>
 	<a class="right carousel-control" href="#carousel-index-img" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-chevron-right" style="color:#FEC504;" aria-hidden="true"></span>
 	</a>
 </div>
 
 <div>
-	<div class="orange-block bc-orange0">液</div>
-	<div class="orange-block bc-orange1">氧</div>
-	<div class="orange-block bc-orange2">罐</div>
-	<div class="orange-block bc-orange3">头</div>
+	<div style="width:800px;margin:0 auto;">
+		<div class="orange-block bc-orange0" data-toggle="modal" data-target="#ye">九</div>
+		<div class="orange-block bc-orange1" data-toggle="modal" data-target="#ye">橙</div>
+		<div class="orange-block bc-orange2" data-toggle="modal" data-target="#ye">文</div>
+		<div class="orange-block bc-orange3" data-toggle="modal" data-target="#ye">化</div>
+	</div>
+	
+	<div id="ye" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog orange-model-border">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" style="font-weight:bold;">关于九橙</h4>
+				</div>
+				<div class="modal-body orange-model">
+					大胡子喜欢老人家，但老人家喜欢小谢<br/>
+					大胡子喜欢老人家，但老人家喜欢小谢<br/>
+					大胡子喜欢老人家，但老人家喜欢小谢<br/>
+					大胡子喜欢老人家，但老人家喜欢小谢<br/>
+					大胡子喜欢老人家，但老人家喜欢小谢<br/>
+				</div>
+				<div class="modal-footer orange-model-footer">
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="footer">
 	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
 </div>
 
+<script>
+	function show() {
+		location.assign("show.html");
+	}
+</script>
 </body>
 </html>

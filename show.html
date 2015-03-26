@@ -14,12 +14,16 @@
 	to {opacity:1.0;}
 }
 
+body {
+	overflow-x: hidden;
+}
+
 div.border-bottom {
-	border-bottom:1px solid #FDF6D0;
+	border-bottom:1px solid #FEC504;
 }
 
 div.border-top {
-	border-top:1px solid #FDF6D0;
+	border-top:1px solid #FEC504;
 }
 
 .orange-less-bc {
@@ -28,12 +32,18 @@ div.border-top {
 }
 
 div.photo-frame {
-	padding-bottom: 20px;
 	margin: 10px;
 	float: left;
 	background-color: #FFFFFF;
-	
 	box-shadow: 0px 0px 5px rgba(254, 197, 4, 0.8);
+	color: #FEC504;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.photo-frame:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px rgba(254, 197, 4, 1.0);
 }
 
 div.photo-frame img {
@@ -52,41 +62,93 @@ div.photo-frame img {
 	<div class="nav-btn nav-btn-selected">作品展示</div>
 	<div class="nav-btn">在线预约</div>
 	<div class="nav-btn">服务套餐</div>
-	<div class="nav-btn">首页</div>
+	<div class="nav-btn" onclick="index()">首页</div>
 </div>
 
 <div class="row orange-less-bc">
 <div id="img-container" class="col-lg-offset-1 col-lg-11">
 	<div class="photo-frame">
 		<img src="images/show/1.jpg"/>
+		<div>NO.01</div>
 	</div>
 	<div class="photo-frame">
-		<img src="images/show/2.jpg"/>
+		<img src="images/show/11.jpg"/>
+		<div>NO.11</div>
 	</div>
 	<div class="photo-frame">
-		<img src="images/show/3.jpg"/>
+		<img src="images/show/7.jpg"/>
+		<div>NO.07</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/10.jpg"/>
+		<div>NO.10</div>
 	</div>
 	<div class="photo-frame">
 		<img src="images/show/4.jpg"/>
+		<div>NO.04</div>
+	</div>
+	
+	<div class="photo-frame">
+		<img src="images/show/8.jpg"/>
+		<div>NO.08</div>
 	</div>
 	<div class="photo-frame">
-		<img src="images/show/5.jpg"/>
+		<img src="images/show/12.jpg"/>
+		<div>NO.12</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/13.jpg"/>
+		<div>NO.13</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/14.jpg"/>
+		<div>NO.14</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/16.jpg"/>
+		<div>NO.16</div>
+	</div>
+	
+	<div class="photo-frame">
+		<img src="images/show/15.jpg"/>
+		<div>NO.15</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/17.jpg"/>
+		<div>NO.17</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/18.jpg"/>
+		<div>NO.18</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/19.jpg"/>
+		<div>NO.19</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/20.jpg"/>
+		<div>NO.20</div>
 	</div>
 	
 	<div class="photo-frame">
 		<img src="images/show/6.jpg"/>
+		<div>NO.06</div>
 	</div>
 	<div class="photo-frame">
-		<img src="images/show/7.jpg"/>
+		<img src="images/show/5.jpg"/>
+		<div>NO.05</div>
 	</div>
 	<div class="photo-frame">
-		<img src="images/show/8.jpg"/>
+		<img src="images/show/2.jpg"/>
+		<div>NO.02</div>
+	</div>
+	<div class="photo-frame">
+		<img src="images/show/3.jpg"/>
+		<div>NO.03</div>
 	</div>
 	<div class="photo-frame">
 		<img src="images/show/9.jpg"/>
-	</div>
-	<div class="photo-frame">
-		<img src="images/show/10.jpg"/>
+		<div>NO.09</div>
 	</div>
 </div>
 </div>
@@ -102,6 +164,10 @@ div.photo-frame img {
 		for (var i in imgList) {
 			//imgList[i].style.display = "block";
 		}
+	}
+	
+	function index() {
+		location.assign("index.html");
 	}
 </script>
 </body>

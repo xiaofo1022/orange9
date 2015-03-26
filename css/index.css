@@ -1,6 +1,5 @@
 ﻿img.index-show {
-	width: 600px;
-	height: 400px;
+	width: 800px;
 }
 
 div.service-section {
@@ -20,7 +19,7 @@ div.service-section {
 
 .bg-black {
 	width: 100%;
-	background-color: #000000;
+	background-color: #FFFFFF;
 }
 
 .service {
@@ -36,7 +35,7 @@ div.service-section {
 
 .orange-block {
 	width: 25%;
-	height: 260px;
+	height: 200px;
 	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
@@ -67,16 +66,17 @@ div.service-section {
 }
 
 .bc-orange2 {
-	background-color: #FDF0B2;
+	background-color: #FED953;
 }
 
 .bc-orange1 {
-	background-color: #FDF6D0;
+	color: #FEC504;
+	background-color: #FDF0B2;
 }
 
 .bc-orange0 {
 	color: #FEC504;
-	border-bottom: 1px solid #FDF6D0;
+	border: 1px solid #FDF0B2;
 }
 
 @-webkit-keyframes clipboard
@@ -87,4 +87,33 @@ div.service-section {
 
 .ani-clipboard {
 	-webkit-animation: clipboard 1s;
+}
+
+.orange-model {
+	font-size: 16px;
+	color: #FEC504;
+}
+
+.orange-model-header {
+	font-size: 20px;
+	background-color: #FEC504; 
+	color: #FFFFFF;
+	font-weight: bold;
+	border: 1px solid #FEC504;
+	height: 45px;
+	padding: 10px;
+}
+
+.orange-model-footer {
+	font-size: 20px;
+	background-color: #FEC504; 
+	color: #FFFFFF;
+	font-weight: bold;
+	border: 1px solid #FEC504;
+	height: 40px;
+}
+
+.orange-model-border {
+	border: 1px solid #FDF0B2;
+	box-shadow: 0px 0px 10px rgba(254, 197, 4, 1.0);
 }
