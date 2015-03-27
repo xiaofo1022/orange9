@@ -42,23 +42,6 @@ div.service-section {
 	color: #FFFFFF;
 	padding-top: 20px;
 	float: left;
-	transition: transform 0.4s;
-	transition-timing-function: linear;
-	transform: rotateY(0deg);
-}
-
-.orange-block:hover {
-	cursor: pointer;
-}
-
-.orange-hidden {
-	display: none;
-	transform: rotateY(90deg);
-}
-
-.orange-hidden:hover {
-	display: block;
-	transform: rotateY(0deg);
 }
 
 .bc-orange3 {
@@ -77,16 +60,6 @@ div.service-section {
 .bc-orange0 {
 	color: #FEC504;
 	border: 1px solid #FDF0B2;
-}
-
-@-webkit-keyframes clipboard
-{
-	from {rotateX(0deg);}
-	to {rotateX(180deg);}
-}
-
-.ani-clipboard {
-	-webkit-animation: clipboard 1s;
 }
 
 .orange-model {

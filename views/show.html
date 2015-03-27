@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../css/show.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/client.js"></script>
 <script src="../js/tripper.js"></script>
 </head>
 <body>
@@ -49,7 +50,7 @@
 	}
 
 	function createPicComponent(id, imgname) {
-		return '<div id="pic-frame-' + id + '" class="photo-frame" data-toggle="modal" data-target="#pic-model-' + id + '"><img src="../images/show/' + imgname + '.jpg"/><div id="pic-lb-' + id +'" class="pic-label">NO.' + id +'</div></div>';
+		return '<div id="pic-frame-' + id + '" class="photo-frame" data-toggle="modal" data-target="#pic-model-' + id + '"><img src="../images/show/' + imgname + '.jpg"/><div id="pic-lb-' + id +'" class="orange-trans">NO.' + id +'</div></div>';
 	}
 	
 	function createModelComponent(id, imgname) {

@@ -40,6 +40,9 @@ div.nav-btn {
 	padding: 8px 10px;
 	margin: 0px 10px;
 	transition: background-color 0.5s, color 0.5s;
+	-moz-transition: background-color 0.5s, color 0.5s;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+	-o-transition: background-color 0.5s, color 0.5s;
 }
 
 div.nav-btn:hover {
@@ -60,4 +63,24 @@ div.footer {
 	padding: 10px;
 	color: #FEC504;
 	font-size: 10px;
+}
+
+.orange-trans {
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	
+	transition: transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	-webkit-transition: -webkit-transform 0.4s;
+	-o-transition: -o-transform 0.4s;
+	
+	transition-timing-function: linear;
+	-moz-transition-timing-function: -moz-linear;
+	-webkit-transition-timing-function: -webkit-linear;
+	-o-transition-timing-function: -o-linear;
+}
+
+.orange-trans:hover {
+	cursor: pointer;
 }

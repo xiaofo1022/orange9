@@ -1,4 +1,22 @@
-﻿@-webkit-keyframes showimg
+﻿@-webkit-keyframes -webkit-showimg
+{
+	from {opacity:0.0;}
+	to {opacity:1.0;}
+}
+
+@keyframes showimg
+{
+	from {opacity:0.0;}
+	to {opacity:1.0;}
+}
+
+@-moz-keyframes -moz-showimg
+{
+	from {opacity:0.0;}
+	to {opacity:1.0;}
+}
+
+@-o-keyframes -o-showimg
 {
 	from {opacity:0.0;}
 	to {opacity:1.0;}
@@ -39,19 +57,10 @@ div.photo-frame:hover {
 div.photo-frame img {
 	width: 200px;
 	transition: opacity 1s;
-	-webkit-animation: showimg 1s;
-}
-
-.pic-label {
-	transition: transform 0.4s;
-	transition-timing-function: linear;
-	transform: rotateY(0deg);
-}
-
-.pic-label {
-	transition: transform 0.4s;
-	transition-timing-function: linear;
-	transform: rotateY(0deg);
+	animation: showimg 1s;
+	-webkit-animation: -webkit-showimg 1s;
+	-moz-animation: -moz-showimg 1s;
+	-o-animation: -o-showimg 1s;
 }
 
 .pic-label-flip {
