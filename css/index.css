@@ -42,18 +42,18 @@ div.service-section {
 	color: #FFFFFF;
 	padding-top: 20px;
 	float: left;
-	transition: transform 1s, display 1s;
-	transform: rotateY(180deg);
+	transition: transform 0.4s;
+	transition-timing-function: linear;
+	transform: rotateY(0deg);
 }
 
 .orange-block:hover {
 	cursor: pointer;
-	transform: rotateY(0deg);
 }
 
 .orange-hidden {
 	display: none;
-	transform: rotateY(180deg);
+	transform: rotateY(90deg);
 }
 
 .orange-hidden:hover {
@@ -92,6 +92,7 @@ div.service-section {
 .orange-model {
 	font-size: 16px;
 	color: #FEC504;
+	text-align: center;
 }
 
 .orange-model-header {

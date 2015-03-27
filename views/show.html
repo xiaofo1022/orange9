@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../css/header.css"/>
+<link rel="stylesheet" href="../css/show.css"/>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/tripper.js"></script>
+</head>
+<body>
+<div class="header border-bottom">
+	<img class="logo" src="../images/logo.jpg"/>
+	<span>九橙</span>
+	<div class="nav-btn">客户区</div>
+	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn nav-btn-selected">作品展示</div>
+	<div class="nav-btn">在线预约</div>
+	<div class="nav-btn">服务套餐</div>
+	<div class="nav-btn" onclick="index()">首页</div>
+</div>
+
+<div class="row orange-less-bc">
+<div id="img-container" class="col-lg-offset-1 col-lg-11">
+</div>
+</div>
+
+<div class="footer border-top">
+	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
+</div>
+
+<script>
+	var picnmlist = [1, 11, 7, 10, 4, 8, 12, 13, 14, 16, 15, 17, 18, 19, 20, 6, 5, 2, 3, 9];
+	var pichtml = "";
+	
+	init();
+	
+	function init() {
+		for (var i in picnmlist) {
+			var imgname = picnmlist[i];
+			pichtml += (createPicComponent(i, imgname) + createModelComponent(i, imgname));
+		}
+		$("#img-container").html(pichtml);
+		for (var i in picnmlist) {
+			new Tripper("pic-lb-" + i, "ORANGE 9", "pic-label-flip", "pic-frame-" + i);
+		}
+	}
+
+	function createPicComponent(id, imgname) {
+		return '<div id="pic-frame-' + id + '" class="photo-frame" data-toggle="modal" data-target="#pic-model-' + id + '"><img src="../images/show/' + imgname + '.jpg"/><div id="pic-lb-' + id +'" class="pic-label">NO.' + id +'</div></div>';
+	}
+	
+	function createModelComponent(id, imgname) {
+		return '<div id="pic-model-' + id + '" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog none-model-border"><div class="modal-content"><div id="pic-model-body" class="modal-body pm-body"><img src="../images/show/' + imgname + '.jpg"/></div></div></div></div>';
+	}
+	
+	function index() {
+		location.assign("../index.html");
+	}
+</script>
+</body>
+</html>
