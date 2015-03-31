@@ -26,14 +26,6 @@ body {
 	overflow-x: hidden;
 }
 
-div.border-bottom {
-	border-bottom:1px solid #FEC504;
-}
-
-div.border-top {
-	border-top:1px solid #FEC504;
-}
-
 .orange-less-bc {
 	background-color: #FFFFFF;
 	overflow-x: hidden;

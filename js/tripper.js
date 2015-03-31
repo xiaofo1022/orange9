@@ -5,6 +5,7 @@
 	this.tripperText = tripperText;
 	this.tripperClass = tripperClass;
 	this.over = false;
+	this.browser = client.browser;
 	var ins = this;
 	
 	this.hover.bind("transitionend", function() { ins.transitionEnd(ins) });
@@ -25,18 +26,21 @@
 
 Tripper.prototype = {
 	transform: function(component, deg) {
-		var browser = client.browser;
-		if (browser.name == "safari") {
+		if (this.browser.name == "safari") {
 			component.css("-webkit-transform", "rotateY(" + deg + "deg)");
+		} else if (this.browser.name == "firefox") {
+			this.transitionEnd(this);
 		} else {
 			component.css("transform", "rotateY(" + deg + "deg)");
 		}
 	},
 	
 	transitionEnd: function(ins) {
-		ins.transform(ins.component, 0);
+		if (ins.browser.name != "firefox") {
+			ins.transform(ins.component, 0);
+		}
 		if (ins.over) {
-			ins.component.text(ins.tripperText);
+			ins.component.html(ins.tripperText);
 			if (ins.tripperClass) {	
 				ins.component.addClass(ins.tripperClass);
 			}

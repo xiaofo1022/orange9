@@ -15,11 +15,11 @@
 <div class="header">
 	<img class="logo" src="images/logo.jpg"/>
 	<span>九橙</span>
-	<div class="nav-btn">客户区</div>
+	<div class="nav-btn">用户登录</div>
 	<div class="nav-btn">常见问题</div>
 	<div class="nav-btn" onclick="show()">作品展示</div>
-	<div class="nav-btn">在线预约</div>
-	<div class="nav-btn">服务套餐</div>
+	<div class="nav-btn" onclick="order()">在线预约</div>
+	<div class="nav-btn" onclick="combo()">服务套餐</div>
 	<div class="nav-btn nav-btn-selected">首页</div>
 </div>
 
@@ -55,11 +55,11 @@
 </div>
 
 <div>
-	<div style="width:800px;margin:0 auto;">
+	<div id="block-container" style="width:800px;margin:0 auto;">
 		<div id="block1" class="orange-block orange-trans bc-orange0" data-toggle="modal" data-target="#ye">九</div>
 		<div id="block2" class="orange-block orange-trans bc-orange1" data-toggle="modal" data-target="#ye">橙</div>
 		<div id="block3" class="orange-block orange-trans bc-orange2" data-toggle="modal" data-target="#ye">文</div>
-		<div id="block4" class="orange-block orange-trans bc-orange3" data-toggle="modal" data-target="#ye">化</div>
+		<div id="block4" class="orange-block orange-trans bc-orange3">化</div>
 	</div>
 	
 	<div id="ye" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -94,11 +94,19 @@
 		new Tripper("block1", "关于我们");
 		new Tripper("block2", "关于我们");
 		new Tripper("block3", "关于我们");
-		new Tripper("block4", "关于我们");
+		new Tripper("block4", "凡是屌或美的<br/>人<br/>事物<br/>我们都感兴趣");
 	}
 	
 	function show() {
 		location.assign("views/show.html");
+	}
+	
+	function combo() {
+		location.assign("views/combo.html");
+	}
+	
+	function order() {
+		location.assign("views/order.html");
 	}
 </script>
 </body>

@@ -15,17 +15,18 @@
 <div class="header border-bottom">
 	<img class="logo" src="../images/logo.jpg"/>
 	<span>九橙</span>
-	<div class="nav-btn">客户区</div>
+	<div class="nav-btn">用户登录</div>
 	<div class="nav-btn">常见问题</div>
 	<div class="nav-btn nav-btn-selected">作品展示</div>
-	<div class="nav-btn">在线预约</div>
-	<div class="nav-btn">服务套餐</div>
+	<div class="nav-btn" onclick="order()">在线预约</div>
+	<div class="nav-btn" onclick="combo()">服务套餐</div>
 	<div class="nav-btn" onclick="index()">首页</div>
 </div>
 
 <div class="row orange-less-bc">
 <div id="img-container" class="col-lg-offset-1 col-lg-11">
 </div>
+<div class="col-lg-1"></div>
 </div>
 
 <div class="footer border-top">
@@ -59,6 +60,14 @@
 	
 	function index() {
 		location.assign("../index.html");
+	}
+	
+	function combo() {
+		location.assign("combo.html");
+	}
+	
+	function order() {
+		location.assign("order.html");
 	}
 </script>
 </body>
