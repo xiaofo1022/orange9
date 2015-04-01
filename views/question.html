@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../css/header.css"/>
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<style>
+	div.question-border {
+		border: 4px solid #FEC504;
+		margin: 10px; 
+		padding: 10px;
+	}
+	
+	p.question-header {
+		color: #FEC504; 
+		font-size: 18px; 
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+</style>
+</head>
+<body>
+<div class="header border-bottom">
+	<span class="orange">ORANGE</span>
+	<span class="nine">9</span>
+	<div class="nav-btn">用户登录</div>
+	<div class="nav-btn nav-btn-selected">常见问题</div>
+	<div class="nav-btn" onclick="show()">作品展示</div>
+	<div class="nav-btn" onclick="order()">在线预约</div>
+	<div class="nav-btn" onclick="combo()">服务套餐</div>
+	<div class="nav-btn" onclick="index()">首页</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-lg-offset-2 col-lg-8">
+	<div class="question-border">
+		<p class="question-header">Q：什么时候可以预定ORANGE 9的档期？怎样预定ORANGE 9的档期？</p>
+
+		A：每年我们都会分两次时间在我们的官方网站开放预定档期。<br/>
+
+		上半年（1~6月份）档期会在上一年度的11月底开放预定;
+		下半年（7~12月份）档期会在同年5月底开放预定。
+
+		具体预定时间都会提前在ORANGE 9的官方微博和官方微信通知大家。需要预定ORANGE 9的档期，可先在官网详细了解我们的套系内容、套系价格和拍摄风格后，选择自己想要预定的拍摄套系（请注意每个套餐的建议适合年龄，效果更佳），进入官网的档期预定进行自助预定即可。我们支持支付宝付款，定金为500元人民币。（请确认好自己的支付宝账户-邮箱名，方便支付定金时使用。）
+
+		<p class="question-header">Q：来ORANGE 9拍摄需要准备服装吗？</p>
+
+		A：需要准备，小朋友自己的衣服是最合身，最卫生，最适合自己的。所以请爸爸妈妈提前给宝宝准备好拍摄的服装。<br/>
+
+		关于衣服<br/>
+
+		1-2件纯色的T恤/薄外套，1件为浅色（白色或者粉色系）适合于拍摄清新干净的效果，另外一件为正纯色衣服（如红色、黄色、蓝色、黑色、灰色等 等），适合于拍摄活泼阳光的效果。同时，爸爸妈妈也可以准备一套和宝宝色系统一的体恤，在全家拍摄亲子照环节的时候，效果会眼前一亮。 除此之外的衣服，可以准备些成套系风格的，比如公主风，牛仔风，田园风，森女风，摇滚风，注意这些衣服在选择上，都尽量不要大面积图案的，因为呈现 在照片上的时候，大面积或者繁琐的图案会抢了宝宝精彩的表情，成为画面的累赘。可以尽量选择格子、波点、条纹、碎花等等比较常见大气的衣服底纹。 这里提供一个简单的办法，如果你选不出衣服，推荐比较常见的如H&M，ZARA，UNIQLO等等去购买宝宝的服装，基本上大品牌都有KIDS小孩的专柜，当然效果也会很大牌。
+
+		关于配饰<br/>
+
+		我们会准备一些头饰、围巾、帽子等，当然也请爸爸妈妈带上平时给小朋友精心挑选的手套、鞋子、手表、眼镜、项链等你觉得特别好看的饰品，这样可以为小朋友做更多的造型。
+
+		关于玩具、道具<br/>
+
+		请带上小朋友最喜欢的几件玩具，记录宝宝的同时，这些小玩意儿也是最好的回忆。另外，比较有特色的，比如他平时很喜欢刷牙，可以带上牙刷牙膏和杯子，拍摄一组刷牙场景的温馨照片，会很有生活特质呢。
+
+		<p class="question-header">Q：来ORANGE 9拍摄提供化妆服务吗？</p>
+
+		A：我们不提供小朋友和妈妈的彩妆服务。我们会根据需要为小朋友做头发造型，也会适当使用一次性夹板烫发、发蜡、定型喷雾等品牌产品。ORANGE 9坚持“留住最真的”，真实记录自己的样子。我们建议妈妈素颜或者淡妆来拍摄亲子照，以方便在拍摄时和小朋友更亲密地互动。
+
+		<p class="question-header">Q：拍摄需要多长时间？</p>
+
+		A：根据小朋友们的状态，从前期准备（包括服装搭配、造型）以及拍摄环节，依小朋友状态而定，一般拍摄时间在2小时左右。
+
+		<p class="question-header">Q：请问是否可以取消预定？取消预定是否可以退还定金？</p>
+
+		A：收取定金的目的是为了确定每位客人的拍摄意向。一旦确定拍摄意向，摄影师和助理就开始作拍摄准备，当然也是为了让您不随意变更或者被变更或被取消拍摄计划造成时间上的浪费。拍摄有效期为半年，如未来拍摄，我们将收取已支付的定金作为档期空缺的风险补偿。所有定金都不作退还，所以请您理解。
+
+		<p class="question-header">Q：已经预定了杭州店拍摄，可以更改到其他店拍摄吗？FACE系列可以换成LOOK系列吗？</p>
+
+		A：在预定拍摄前，请考虑好您需要拍摄的时间、地点以及拍摄系列，预定档期后不做拍摄门店、拍摄时间、不同系列的更换，各门店有独立的档期预约系统。
+	</div>
+</div>
+</div>
+</div>
+
+<div class="footer border-top">
+	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
+</div>
+
+<script>
+	function index() {
+		location.assign("../index.html");
+	}
+	
+	function combo() {
+		location.assign("combo.html");
+	}
+	
+	function order() {
+		location.assign("order.html");
+	}
+	
+	function show() {
+		location.assign("show.html");
+	}
+</script>
+</body>
+</html>

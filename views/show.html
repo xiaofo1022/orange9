@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/show.css"/>
+<link rel="stylesheet" href="../css/zoom.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/client.js"></script>
@@ -13,20 +14,21 @@
 </head>
 <body>
 <div class="header border-bottom">
-	<img class="logo" src="../images/logo.jpg"/>
-	<span>九橙</span>
+	<span class="orange">ORANGE</span>
+	<span class="nine">9</span>
 	<div class="nav-btn">用户登录</div>
-	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn" onclick="question()">常见问题</div>
 	<div class="nav-btn nav-btn-selected">作品展示</div>
 	<div class="nav-btn" onclick="order()">在线预约</div>
 	<div class="nav-btn" onclick="combo()">服务套餐</div>
 	<div class="nav-btn" onclick="index()">首页</div>
 </div>
 
+<div class="container">
 <div class="row orange-less-bc">
 <div id="img-container" class="col-lg-offset-1 col-lg-11">
 </div>
-<div class="col-lg-1"></div>
+</div>
 </div>
 
 <div class="footer border-top">
@@ -42,7 +44,7 @@
 	function init() {
 		for (var i in picnmlist) {
 			var imgname = picnmlist[i];
-			pichtml += (createPicComponent(i, imgname) + createModelComponent(i, imgname));
+			pichtml += (createPicComponent(i, imgname));
 		}
 		$("#img-container").html(pichtml);
 		for (var i in picnmlist) {
@@ -51,7 +53,10 @@
 	}
 
 	function createPicComponent(id, imgname) {
-		return '<div id="pic-frame-' + id + '" class="photo-frame" data-toggle="modal" data-target="#pic-model-' + id + '"><img src="../images/show/' + imgname + '.jpg"/><div id="pic-lb-' + id +'" class="orange-trans">NO.' + id +'</div></div>';
+		return '<div id="pic-frame-' + id + '" class="photo-frame gallery">' 
+				+ '<a href="../images/show/' + imgname + '.jpg"><img id="' + id + '" src="../images/show/' + imgname + '.jpg"/></a>' 
+				+ '<div id="pic-lb-' + id +'" class="orange-trans">NO.' + id 
+				+ '</div></div>';
 	}
 	
 	function createModelComponent(id, imgname) {
@@ -69,6 +74,11 @@
 	function order() {
 		location.assign("order.html");
 	}
+	
+	function question() {
+		location.assign("question.html");
+	}
 </script>
+<script src="../js/zoom.js"></script>
 </body>
 </html>

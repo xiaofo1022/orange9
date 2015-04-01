@@ -5,171 +5,24 @@
 <title>Orange 9</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
+<link rel="stylesheet" href="../css/order.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<style>
-	div.center-container {
-		width: 100%;
-		text-align: center;
-	}
-	
-	div.center {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	.underline:hover {
-		text-decoration: underline;
-	}
-	
-	div.order-info {
-		font-size: 20px;
-		font-weight: bold;
-		color: #FEC504;
-		margin-top: 20px;
-	}
-	
-	p.order-tip {
-		font-size: 16px;
-		color: #FEC504;
-	}
-	
-	div.order-border {
-		margin-top: 10px;
-		margin-bottom: 10px;
-		padding: 10px;
-		border: 1px solid #FEC504;
-		color: #FEC504;
-		box-shadow: 0px 0px 2px rgba(253, 240, 178, 0.6);
-	}
-	
-	div.order-hover:hover {
-		cursor: pointer;
-		background-color: #FEC504;
-		color: #FFFFFF;
-		box-shadow: 0px 0px 15px rgba(253, 240, 178, 1.0);
-	}
-	
-	div.order-block {
-		width: 640px;
-		height: 60px;
-		font-size: 20px;
-		font-weight: bold;
-	}
-
-	div.order-block p {
-		margin-top: 5px;
-	}
-	
-	div.order-bar {
-		margin-top: 20px;
-	}
-	
-	div.btn-step {
-		width: 10px;
-		height: 10px;
-		border: 1px solid #FEC504;
-		border-radius: 5px;
-		background-color: #FEC504;
-		float: left;
-	}
-	
-	div.btn-hollow {
-		width: 10px;
-		height: 10px;
-		border: 1px solid #FEC504;
-		border-radius: 5px;
-		background-color: #FFFFFF;
-		float: left;
-		transition: background-color 1s;
-	}
-	
-	div.btn-line {
-		width: 100px;
-		height: 2px;
-		border: 1px solid #FEC504;
-		background-color: #FEC504;
-		margin-top: 4px;
-		float: left;
-	}
-	
-	div.space-block {
-		width: 100%;
-		height: 100px;
-	}
-	
-	.trans-dis {
-		transition: display 1s;
-	}
-	
-	div.agreement-block {
-		width: 640px;
-		height: 480px;
-		font-size: 14px;
-		color: #000000;
-		font-weight: normal;
-		overflow-y: auto;
-	}
-	
-	div.agreement-btn {
-		width: 120px;
-		height: 50px;
-		font-size: 16px;
-		float: left;
-		margin-right: 10px;
-		text-align: center;
-	}
-	
-	.step {
-		display: none;
-	}
-	
-	div.order-time {
-		width: 300px;
-		height: 300px;
-		font-size: 16px;
-		margin: 10px;
-		padding: 0;
-	}
-	
-	div.order-time-header {
-		width: 100%;
-		height: 40px;
-		background-color: #FEC504;
-		text-align: center;
-		color: #FFFFFF;
-		padding-top: 8px;
-		font-weight: bold;
-	}
-	
-	div.order-time-body {
-		padding-left: 10px;
-	}
-	
-	div.order-time-block {
-		width: 40px;
-		height: 40px;
-		margin: 0;
-		text-align: center;
-		color: #B8B8B8;
-		float: left;
-	}
-</style>
 </head>
 <body>
 
 <div class="header">
-	<img class="logo" src="../images/logo.jpg"/>
-	<span>九橙</span>
+	<span class="orange">ORANGE</span>
+	<span class="nine">9</span>
 	<div class="nav-btn">用户登录</div>
-	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn" onclick="question()">常见问题</div>
 	<div class="nav-btn" onclick="show()">作品展示</div>
 	<div class="nav-btn nav-btn-selected">在线预约</div>
 	<div class="nav-btn" onclick="combo()">服务套餐</div>
 	<div class="nav-btn" onclick="index()">首页</div>
 </div>
 
-<div class="container">
+<div class="container container-size">
 <div class="row">
 <div class="col-lg-offset-2 col-lg-8 order-bar">
 	<div id="step1" class="btn-step"></div>
@@ -477,13 +330,93 @@
 
 <div id="step-block-4" class="row step">
 <div class="col-lg-offset-2 col-lg-8">
+	<div class="combo-info">
+		<p class="combo-header">套餐信息</p>
+		<p>已选套餐：ORANGE9-A</p>
+		<p>拍摄时间：2015年4月1日</p>
+		<p>拍摄地点：滨江区南环路1672号网投创意园1号楼113</p>
+	</div>
+	<div class="self-info">
+		<p class="combo-header">个人信息</p>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="i-name" class="col-sm-4 control-label">您的称呼：</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="i-name" placeholder="如：李学华">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="i-phone" class="col-sm-4 control-label">您的手机：</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="i-phone" placeholder="如：1388686983">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="i-email" class="col-sm-4 control-label">您的邮箱：</label>
+				<div class="col-sm-8">
+					<input type="email" class="form-control" id="i-email" placeholder="如：fucktuciababy@gmail.com">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="i-taobao" class="col-sm-4 control-label">您的淘宝店：</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="i-taobao" placeholder="淘宝地址或店铺名称">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8">
+					<div class="order-block order-border order-hover trans-bc" style="width:105px;height:55px;" onclick="submitInfo()">
+						提交订单
+					</div>
+					<!--
+					<button class="btn btn-default" onclick="submitInfo()"></button>
+					-->
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
 
+<!-- Step 5 -->
+<div id="step-info-5" class="row step">
+<div class="col-lg-offset-2 col-lg-8 order-info">
+	<p>预约档期5 - 确认付款</p>
+	<p class="order-tip">请仔细核对您的拍摄信息，并在线支付</p>
+</div>
+</div>
+
+<div id="step-block-5" class="row step">
+<div class="col-lg-offset-2 col-lg-8">
+	<p class="combo-header">订单详情</p>
+	<p>已选套餐：ORANGE9-A</p>
+	<p>拍摄时间：2015年4月1日</p>
+	<p>拍摄地点：滨江区南环路1672号网投创意园1号楼113</p>
+	<p>您的称呼：李学华</p>
+	<p>您的手机：1388686983</p>
+	<p>您的邮箱：fucktuciababy@gmail.com</p>
+	<p>淘宝店铺：Fuck Tucia to Die</p>
+	<p class="comfirm-pay">确认支付：<img src="../images/alipay.png" onclick="pay()"/></p>
+</div>
+</div>
+
+<!-- Step 6 -->
+<div id="step-info-6" class="row step">
+<div class="col-lg-offset-2 col-lg-8 order-info">
+	<p>预约档期6 - 交易完成</p>
+	<p class="order-tip">您的订单已受理，我们会尽快安排您的订单拍摄，感谢您的支持！</p>
+</div>
+</div>
+
+<div id="step-block-6" class="row step">
+<div class="col-lg-offset-2 col-lg-8">
+	<div class="order-block order-border order-hover trans-bc" style="width:100px;height:55px;" onclick="index()">
+		< 返回
+	</div>
 </div>
 </div>
 
 </div>
-
-<div class="space-block"></div>
 
 <div class="footer border-top">
 	杭州九橙文化创意有限公司 | Copyrights Orange 9. ALL Rights Reserved.
@@ -493,11 +426,20 @@
 	var stepInfo1 = $("#step-info-1");
 	var stepInfo2 = $("#step-info-2");
 	var stepInfo3 = $("#step-info-3");
+	var stepInfo4 = $("#step-info-4");
+	var stepInfo5 = $("#step-info-5");
+	var stepInfo6 = $("#step-info-6");
 	var stepBlock1 = $("#step-block-1");
 	var stepBlock2 = $("#step-block-2");
 	var stepBlock3 = $("#step-block-3");
+	var stepBlock4 = $("#step-block-4");
+	var stepBlock5 = $("#step-block-5");
+	var stepBlock6 = $("#step-block-6");
 	var stepButton2 = $("#step2");
 	var stepButton3 = $("#step3");
+	var stepButton4 = $("#step4");
+	var stepButton5 = $("#step5");
+	var stepButton6 = $("#step6");
 	var comboIndex;
 
 	init();
@@ -524,6 +466,34 @@
 		stepBlock2.hide();
 		stepInfo3.show();
 		stepBlock3.show();
+		$(".order-time-block").bind("click", function() { selectDate(); });
+	}
+	
+	function selectDate() {
+		scroll(0, 0);
+		stepButton4.css("background-color", "#FEC504");
+		stepInfo3.hide();
+		stepBlock3.hide();
+		stepInfo4.show();
+		stepBlock4.show();
+	}
+	
+	function submitInfo() {
+		scroll(0, 0);
+		stepButton5.css("background-color", "#FEC504");
+		stepInfo4.hide();
+		stepBlock4.hide();
+		stepInfo5.show();
+		stepBlock5.show();
+	}
+	
+	function pay() {
+		scroll(0, 0);
+		stepButton6.css("background-color", "#FEC504");
+		stepInfo5.hide();
+		stepBlock5.hide();
+		stepInfo6.show();
+		stepBlock6.show();
 	}
 	
 	function index() {
@@ -536,6 +506,10 @@
 	
 	function combo() {
 		location.assign("combo.html");
+	}
+	
+	function question() {
+		location.assign("question.html");
 	}
 </script>
 </body>

@@ -12,10 +12,10 @@
 <body>
 
 <div class="header">
-	<img class="logo" src="../images/logo.jpg"/>
-	<span>九橙</span>
+	<span class="orange">ORANGE</span>
+	<span class="nine">9</span>
 	<div class="nav-btn">用户登录</div>
-	<div class="nav-btn">常见问题</div>
+	<div class="nav-btn" onclick="question()">常见问题</div>
 	<div class="nav-btn" onclick="show()">作品展示</div>
 	<div class="nav-btn" onclick="order()">在线预约</div>
 	<div class="nav-btn nav-btn-selected">服务套餐</div>
@@ -87,6 +87,10 @@
 	
 	function order() {
 		location.assign("order.html");
+	}
+	
+	function question() {
+		location.assign("question.html");
 	}
 </script>
 </body>

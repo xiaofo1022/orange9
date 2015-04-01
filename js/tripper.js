@@ -14,31 +14,36 @@
 	this.hover.bind("oTransitionEnd", function() { ins.transitionEnd(ins) });
 	
 	this.hover.bind("mouseover", function() {
-		ins.over = true;
+		ins.over = !ins.over;
 		ins.transform(ins.component, 90);
 	});
-	
-	this.hover.bind("mouseout", function() {
-		ins.over = false;
-		ins.transform(ins.component, 90);
-	});
+		
+	/*
+		this.hover.bind("mouseout", function() {
+			ins.over = false;
+			ins.transform(ins.component, 90);
+		});
+	*/
 };
 
 Tripper.prototype = {
+	domouseover: function() {
+		this.over = !this.over;
+		this.transform(this.component, 90);
+	},
+	
 	transform: function(component, deg) {
 		if (this.browser.name == "safari") {
 			component.css("-webkit-transform", "rotateY(" + deg + "deg)");
 		} else if (this.browser.name == "firefox") {
-			this.transitionEnd(this);
+			component.css("-moz-transform", "rotateY(" + deg + "deg)");
 		} else {
 			component.css("transform", "rotateY(" + deg + "deg)");
 		}
 	},
 	
 	transitionEnd: function(ins) {
-		if (ins.browser.name != "firefox") {
-			ins.transform(ins.component, 0);
-		}
+		ins.transform(ins.component, 0);
 		if (ins.over) {
 			ins.component.html(ins.tripperText);
 			if (ins.tripperClass) {	
