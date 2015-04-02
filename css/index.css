@@ -33,41 +33,6 @@ div.service-section {
 	font-weight: bold;
 }
 
-.orange-block {
-	width: 25%;
-	height: 100px;
-	font-size: 30px;
-	font-weight: bold;
-	text-align: center;
-	color: #FFFFFF;
-	padding-top: 20px;
-	float: left;
-}
-
-#block-container {
-	position: absolute;
-	bottom: 0;
-	right: 10%;
-}
-
-.bc-orange3 {
-	background-color: #FEC504;
-}
-
-.bc-orange2 {
-	background-color: #FED953;
-}
-
-.bc-orange1 {
-	color: #FEC504;
-	background-color: #FDF0B2;
-}
-
-.bc-orange0 {
-	color: #FEC504;
-	border: 1px solid #FDF0B2;
-}
-
 .orange-model {
 	font-size: 16px;
 	color: #FEC504;

@@ -13,17 +13,12 @@
 	this.hover.bind("mozTransitionEnd", function() { ins.transitionEnd(ins) });
 	this.hover.bind("oTransitionEnd", function() { ins.transitionEnd(ins) });
 	
-	this.hover.bind("mouseover", function() {
-		ins.over = !ins.over;
-		ins.transform(ins.component, 90);
-	});
-		
-	/*
-		this.hover.bind("mouseout", function() {
-			ins.over = false;
+	if (hoverId) {	
+		this.hover.bind("mouseover", function() {
+			ins.over = !ins.over;
 			ins.transform(ins.component, 90);
 		});
-	*/
+	}
 };
 
 Tripper.prototype = {

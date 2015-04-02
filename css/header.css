@@ -82,9 +82,44 @@ div.footer {
 	clear: both;
 	border-top: 0px solid #FEC504;
 	text-align: center;
-	padding: 10px;
+	padding: 5px;
 	color: #FEC504;
 	font-size: 10px;
+	width: 100%;
+}
+
+div.footer > div {
+	position: relative; 
+	left: 20%; 
+	float: left;
+}
+
+.orange-block {
+	width: 30px;
+	height: 30px;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 4px;
+	color: #FFFFFF;
+	float: left;
+}
+
+.bc-orange3 {
+	background-color: #FEC504;
+}
+
+.bc-orange2 {
+	background-color: #FED953;
+}
+
+.bc-orange1 {
+	color: #FEC504;
+	background-color: #FDF0B2;
+}
+
+.bc-orange0 {
+	color: #FEC504;
+	border: 1px solid #FDF0B2;
 }
 
 div.border-bottom {
