@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/views-nav.js"></script>
 <style>
 	div.question-border {
 		border: 4px solid #FEC504;
@@ -27,7 +28,7 @@
 <div class="header border-bottom">
 	<span class="orange">ORANGE</span>
 	<span class="nine">9</span>
-	<div class="nav-btn">用户登录</div>
+	<div class="nav-btn" onclick="login()">用户登录</div>
 	<div class="nav-btn nav-btn-selected">常见问题</div>
 	<div class="nav-btn" onclick="show()">作品展示</div>
 	<div class="nav-btn" onclick="order()">在线预约</div>
@@ -108,23 +109,5 @@
 <script src="../js/tripper.js"></script>
 <script src="../js/tripper-control.js"></script>
 <script src="../js/footer.js"></script>
-
-<script>
-	function index() {
-		location.assign("../index.html");
-	}
-	
-	function combo() {
-		location.assign("combo.html");
-	}
-	
-	function order() {
-		location.assign("order.html");
-	}
-	
-	function show() {
-		location.assign("show.html");
-	}
-</script>
 </body>
 </html>

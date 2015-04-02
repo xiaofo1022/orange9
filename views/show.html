@@ -9,12 +9,13 @@
 <link rel="stylesheet" href="../css/zoom.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/views-nav.js"></script>
 </head>
 <body>
 <div class="header border-bottom">
 	<span class="orange">ORANGE</span>
 	<span class="nine">9</span>
-	<div class="nav-btn">用户登录</div>
+	<div class="nav-btn" onclick="login()">用户登录</div>
 	<div class="nav-btn" onclick="question()">常见问题</div>
 	<div class="nav-btn nav-btn-selected">作品展示</div>
 	<div class="nav-btn" onclick="order()">在线预约</div>
@@ -80,22 +81,6 @@
 	
 	function createModelComponent(id, imgname) {
 		return '<div id="pic-model-' + id + '" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog none-model-border"><div class="modal-content"><div id="pic-model-body" class="modal-body pm-body"><img src="../images/show/' + imgname + '.jpg"/></div></div></div></div>';
-	}
-	
-	function index() {
-		location.assign("../index.html");
-	}
-	
-	function combo() {
-		location.assign("combo.html");
-	}
-	
-	function order() {
-		location.assign("order.html");
-	}
-	
-	function question() {
-		location.assign("question.html");
 	}
 </script>
 <script src="../js/zoom.js"></script>

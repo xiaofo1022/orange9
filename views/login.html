@@ -5,75 +5,63 @@
 <title>Orange 9</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/combo.css"/>
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/views-nav.js"></script>
+<style>
+	.login-console {
+		color: #FEC504;
+		font-size: 18px;
+		font-weight: bold;
+		padding-top: 100px;
+		text-align: center;
+	}
+	
+	.login-header {
+		font-size: 26px;
+		margin-bottom: 20px;
+	}
+	
+	.login-header span {
+		color: #000000;
+	}
+	
+	.login-input {
+		display: inline;
+		width: 300px;
+	}
+	
+	.login-btn {
+		width: 300px;
+	}
+</style>
 </head>
 <body>
-
-<div class="header">
+<div class="header border-bottom">
 	<span class="orange">ORANGE</span>
 	<span class="nine">9</span>
-	<div class="nav-btn" onclick="login()">用户登录</div>
+	<div class="nav-btn nav-btn-selected">用户登录</div>
 	<div class="nav-btn" onclick="question()">常见问题</div>
 	<div class="nav-btn" onclick="show()">作品展示</div>
 	<div class="nav-btn" onclick="order()">在线预约</div>
-	<div class="nav-btn nav-btn-selected">服务套餐</div>
+	<div class="nav-btn" onclick="combo()">服务套餐</div>
 	<div class="nav-btn" onclick="index()">首页</div>
 </div>
 
-<div class="container">
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_1.jpg"/>
-	<p>套餐A</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
-</div>
-
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_2.jpg"/>
-	<p>套餐B</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
+<div class="login-console">
+	<p class="login-header"><span>ORANGE</span> 9 SYSTEM</p>
+	<div class="form-group">
+		<input type="text" class="form-control login-input" id="i-name" placeholder="账号"/>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control login-input" id="i-password" placeholder="密码">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-warning login-btn" onclick="login()">登录</button>
+	</div>
 </div>
 
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_3.jpg"/>
-	<p>套餐C</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
-</div>
-
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_4.jpg"/>
-	<p>套餐D</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
-</div>
-
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_5.jpg"/>
-	<p>套餐E</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
-</div>
-
-<div class="row">
-<div class="combo-block col-lg-offset-1 col-lg-11">
-	<img src="../images/combo/c_6.jpg"/>
-	<p>套餐F</p>
-	<div class="btn-order trans-bc" onclick="order()">在线预约</div>
-</div>
-</div>
-</div>
-
-<div class="footer border-top">
+<div class="footer border-top navbar-fixed-bottom">
 	<div>
 		<div id="block1" class="orange-block orange-trans bc-orange2"></div>
 		<div id="block2" class="orange-block orange-trans bc-orange1"></div>
@@ -97,5 +85,10 @@
 <script src="../js/tripper.js"></script>
 <script src="../js/tripper-control.js"></script>
 <script src="../js/footer.js"></script>
+<script>
+	function login() {
+		location.assign("system.html");
+	}
+</script>
 </body>
 </html>
