@@ -1,38 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700);
 
-@font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: "Microsoft YaHei", 'codropsicons';
-	src:url('../fonts/codropsicons/codropsicons.eot');
-	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
-}
-
+/*
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
-
-body {
-	color: #fff;
-	background: #FCFCFC;
-	font-weight: 400;
-	font-size: 1em;
-	font-family: "Microsoft YaHei", 'Raleway', Arial, sans-serif;
-}
-
-a {
-	color: #B24E51;
-	text-decoration: none;
-}
-
-a:hover,
-a:focus {
-	color: #afb3b8;
-	outline: none;
-}
+*/
 
 .theme-2 { background: #434d55; }
 .theme-2 a { color: #4991C2; }

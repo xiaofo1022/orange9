@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Orange 9 System</title>
-<link rel="stylesheet" type="text/css" href="../css/svg/normalize.css" />
-<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="../css/svg/index.css" />
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/svg/svg.css" />
+<link rel="stylesheet" type="text/css" href="../css/svg/sidebar.css" />
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-default.css" />
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-style-other.css" />
 <link rel="stylesheet" type="text/css" href="../css/hover/set2.css" />
-<link rel="stylesheet" type="text/css" href="../css/svg/pullupmenu.css" />
+<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.dynatable.css" />
 <script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="../js/svg/snap.svg-min.js"></script>
 <script src="../js/notification/modernizr.custom.js"></script>
+<script src="../js/jquery.dynatable.js"></script>
 <!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -22,7 +25,7 @@
 		font-size: 26px;
 		font-weight: bold;
 		margin: 0;
-		margin-left: 10px;
+		margin-left: -15px;
 	}
 	
 	.login-header span {
@@ -38,10 +41,18 @@
 		width: 20%;
 		height: 10px;
 	}
+	
+	.clear {
+		clear: both;
+	}
+	
+	.text-left {
+		text-align: left;
+	}
 </style>
 </head>
 <body>
-<div style="text-align:center;width: 100%;">
+<div style="text-align:center;">
 	<p class="login-header"><span>ORANGE</span> 9 SYSTEM</p>
 </div>
 <div class="container">
@@ -49,15 +60,35 @@
 		<button class="menu__handle"><span>Menu</span></button>
 		<div class="menu__inner">
 			<ul>
-				<li><a href="#">业绩管理</a></li>
-				<li><a href="#">系统日志</a></li>
-				<li><a href="#">账号设置</a></li>
-				<li><a href="#">退出</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-home" style="color:#FEC504;"></i><span>Home<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-heart" style="color:#FEC504;"></i><span>Favs<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-folder" style="color:#FEC504;"></i><span>Files<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-tachometer" style="color:#FEC504;"></i><span>Stats<span></a></li>
+				
+				<li><a href="#"><i class="fa fa-fw fa-music" style="color:#FEC504;"></i><span>Music<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-film" style="color:#FEC504;"></i><span>Film<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-gear" style="color:#FEC504;"></i><span>Gear<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-edit" style="color:#FEC504;"></i><span>Edit<span></a></li>
+				
+				<li><a href="#"><i class="fa fa-fw fa-flag" style="color:#FEC504;"></i><span>Flag<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-cog" style="color:#FEC504;"></i><span>Cog<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-signal" style="color:#FEC504;"></i><span>Signal<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-power-off" style="color:#FEC504;"></i><span>Power Off<span></a></li>
+				
+				<li><a href="#"><i class="fa fa-fw fa-search-minus" style="color:#FEC504;"></i><span>Search Minus<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-search-plus" style="color:#FEC504;"></i><span>Search Plus<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-times" style="color:#FEC504;"></i><span>Times<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-close" style="color:#FEC504;"></i><span>Close<span></a></li>
+				
+				<li><a href="#"><i class="fa fa-fw fa-remove" style="color:#FEC504;"></i><span>Remove<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-check" style="color:#FEC504;"></i><span>Check<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-search" style="color:#FEC504;"></i><span>Search<span></a></li>
+				<li><a href="#"><i class="fa fa-fw fa-glass" style="color:#FEC504;"></i><span>Glass<span></a></li>
 			</ul>
 		</div>
-		<div class="morph-shape" data-morph-open="M-10,100c0,0,44-95,290-95c232,0,290,95,290,95" data-morph-close="M-10,100c0,0,44,95,290,95c232,0,290-95,290-95">
-			<svg width="100%" height="100%" viewBox="0 0 560 200" preserveAspectRatio="none">
-				<path fill="none" d="M-10,100c0,0,44,0,290,0c232,0,290,0,290,0"/>
+		<div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
+			<svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
+				<path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
 			</svg>
 		</div>
 	</nav>
@@ -68,36 +99,20 @@
 	</div>
 	<div class="content">
 		<div class="grid">
-			<div class="left-space"></div>
-			<figure class="effect-winston">
+			<figure class="effect-kira">
 				<img src="../images/hover/1.png"/>
 				<figcaption>
-					<h2>拍照 <span>管理</span></h2>
-					<p>
-						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
-					</p>
-				</figcaption>			
+							<h2><span>员工</span></h2>
+							<p>
+								<a title="录入" data-toggle="modal" data-target="#addEmployee"><i class="fa fa-fw fa-star-o"></i></a>
+								<a title="列表" data-toggle="modal" data-target="#employeeList"><i class="fa fa-fw fa-search"></i></a>
+							</p>
+						</figcaption>			
 			</figure>
-			<figure class="effect-winston">
-				<img src="../images/hover/4.png"/>
-				<figcaption>
-					<h2>账号 <span>设置</span></h2>
-					<p>
-						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
-					</p>
-				</figcaption>			
-			</figure>
-		</div>
-		<div class="grid">
-			<div class="left-space"></div>
-			<figure class="effect-winston">
+			<figure class="effect-kira">
 				<img src="../images/hover/6.png"/>
 				<figcaption>
-					<h2>业绩 <span>管理</span></h2>
+					<h2><span>业绩</span></h2>
 					<p>
 						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
 						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
@@ -105,10 +120,13 @@
 					</p>
 				</figcaption>			
 			</figure>
-			<figure class="effect-winston">
+			<div class="clear"></div>
+		</div>
+		<div class="grid">
+			<figure class="effect-kira">
 				<img src="../images/hover/5.png"/>
 				<figcaption>
-					<h2>系统 <span>日志</span></h2>
+					<h2><span>日志</span></h2>
 					<p>
 						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
 						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
@@ -116,12 +134,146 @@
 					</p>
 				</figcaption>			
 			</figure>
+			<figure class="effect-kira">
+				<img src="../images/hover/4.png"/>
+				<figcaption>
+					<h2><span>账号</span></h2>
+					<p>
+						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
+						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+					</p>
+				</figcaption>			
+			</figure>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- Add Employee Modal -->
+	<div id="addEmployee" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">员工录入</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-upload-header">上传头像</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file" id="i-upload-header"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-name">称呼</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-name"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">职位</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>摄影师</option>
+									<option>后期</option>
+									<option>助理</option>
+									<option>其他</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">手机号</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">初始账号</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">初始密码</label>
+							<div class="col-sm-4">
+								<input type="password" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">确认密码</label>
+							<div class="col-sm-4">
+								<input type="password" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">基本工资</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Employee List Modal -->
+	<div id="employeeList" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">员工列表</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-employee-list" class="table table-bordered">
+						<thead>
+							<th data-dynatable-column="name">称呼</th>
+							<th data-dynatable-column="title">职位</th>
+							<th data-dynatable-column="phone">电话</th>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 </body>
 <script src="../js/svg/classie.js"></script>
-<script src="../js/svg/pullupmenu.js"></script>
+<script src="../js/svg/sidebar.js"></script>
 <script src="../js/notification/notificationFx.js"></script>
 <script src="../js/notification/corner-expand.js"></script>
+<script>
+	var employeeList = [
+		{
+			"name": "大胡子",
+			"title": "摄影师",
+			"phone": "13812345678"
+		},
+		{
+			"name": "老人家",
+			"title": "后期",
+			"phone": "13812345678"
+		},
+		{
+			"name": "小佛儿",
+			"title": "其他",
+			"phone": "13812345678"
+		}
+	];
+	
+	$('#tb-employee-list').dynatable({
+		dataset: {
+			records: employeeList
+		}
+	});
+</script>
 </html>
