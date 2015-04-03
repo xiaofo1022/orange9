@@ -1203,12 +1203,13 @@
       var $search = $('<input />', {
             type: 'search',
             id: 'dynatable-query-search-' + obj.element.id,
+			'class': 'dynatable-control dynatable-search',
             'data-dynatable-query': 'search',
             value: settings.dataset.queries.search
           }),
           $searchSpan = $('<span></span>', {
             id: 'dynatable-search-' + obj.element.id,
-            'class': 'dynatable-search',
+            'class': 'dynatable-fright',
             text: 'Search: '
           }).append($search);
 
@@ -1283,7 +1284,8 @@
     this.create = function() {
       var $select = $('<select>', {
             id: 'dynatable-per-page-' + obj.element.id,
-            'class': 'dynatable-per-page-select'
+            //'class': 'dynatable-per-page-select'
+			'class': 'dynatable-show dynatable-control'
           });
 
       for (var i = 0, len = settings.dataset.perPageOptions.length; i < len; i++) {
