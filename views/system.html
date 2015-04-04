@@ -8,11 +8,14 @@
 <link rel="stylesheet" type="text/css" href="../css/svg/sidebar.css" />
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-default.css" />
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-style-other.css" />
+<link rel="stylesheet" type="text/css" href="../css/notification/ns-style-attached.css" />
 <link rel="stylesheet" type="text/css" href="../css/hover/set2.css" />
 <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="../css/jquery.dynatable.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui/jquery-ui.css" />
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
 <script src="../js/svg/snap.svg-min.js"></script>
 <script src="../js/notification/modernizr.custom.js"></script>
 <script src="../js/jquery.dynatable.js"></script>
@@ -49,6 +52,10 @@
 	.text-left {
 		text-align: left;
 	}
+	
+	td a:hover {
+		cursor: pointer;
+	}
 </style>
 </head>
 <body>
@@ -56,6 +63,7 @@
 	<p class="login-header"><span>ORANGE</span> 9 SYSTEM</p>
 </div>
 <div class="container">
+	<!--
 	<nav id="menu" class="menu">
 		<button class="menu__handle"><span>Menu</span></button>
 		<div class="menu__inner">
@@ -92,6 +100,7 @@
 			</svg>
 		</div>
 	</nav>
+	-->
 	<div class="notification-shape shape-box" id="notification-shape" data-path-to="m 0,0 500,0 0,500 -500,0 z">
 		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
 			<path d="m 0,0 500,0 0,500 0,-500 z"/>
@@ -102,21 +111,24 @@
 			<figure class="effect-kira">
 				<img src="../images/hover/1.png"/>
 				<figcaption>
-							<h2><span>员工</span></h2>
-							<p>
-								<a title="录入" data-toggle="modal" data-target="#addEmployee"><i class="fa fa-fw fa-star-o"></i></a>
-								<a title="列表" data-toggle="modal" data-target="#employeeList"><i class="fa fa-fw fa-search"></i></a>
-							</p>
-						</figcaption>			
+					<h2><span>员工</span></h2>
+					<p>
+						<a title="录入" data-toggle="modal" data-target="#addEmployee"><i class="fa fa-fw fa-plus"></i></a>
+						<a title="列表" data-toggle="modal" data-target="#employeeList"><i class="fa fa-fw fa-search"></i></a>
+						<a title="打卡记录" data-toggle="modal" data-target="#punchCardList"><i class="fa fa-fw fa-tachometer"></i></a>
+						<!--
+						<a title="记一笔" data-toggle="modal" data-target="#addWorkMemo"><i class="fa fa-fw fa-edit"></i></a>
+						-->
+					</p>
+				</figcaption>
 			</figure>
 			<figure class="effect-kira">
-				<img src="../images/hover/6.png"/>
+				<img src="../images/hover/3.png"/>
 				<figcaption>
-					<h2><span>业绩</span></h2>
+					<h2><span>订单</span></h2>
 					<p>
-						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+						<a title="添加" data-toggle="modal" data-target="#addOrder"><i class="fa fa-fw fa-plus"></i></a>
+						<a title="列表" data-toggle="modal" data-target="#orderList"><i class="fa fa-fw fa-search"></i></a>
 					</p>
 				</figcaption>			
 			</figure>
@@ -124,30 +136,66 @@
 		</div>
 		<div class="grid">
 			<figure class="effect-kira">
-				<img src="../images/hover/5.png"/>
+				<img src="../images/hover/2.png"/>
 				<figcaption>
-					<h2><span>日志</span></h2>
+					<h2><span>模特</span></h2>
 					<p>
-						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+						<a title="添加" data-toggle="modal" data-target="#addModel"><i class="fa fa-fw fa-plus"></i></a>
+						<a title="信息" data-toggle="modal" data-target="#modelList"><i class="fa fa-fw fa-search"></i></a>
 					</p>
 				</figcaption>			
 			</figure>
 			<figure class="effect-kira">
 				<img src="../images/hover/4.png"/>
 				<figcaption>
-					<h2><span>账号</span></h2>
+					<h2><span>后期</span></h2>
 					<p>
-						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-comments-o"></i></a>
-						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+						<a title="原片上传" data-toggle="modal" data-target="#postProductionUpload"><i class="fa fa-fw fa-upload"></i></a>
+						<a title="进度" data-toggle="modal" data-target="#postProcessList"><i class="fa fa-fw fa-tachometer"></i></a>
 					</p>
 				</figcaption>			
 			</figure>
 			<div class="clear"></div>
 		</div>
 	</div>
+	
+	<!-- Add Work Memo Modal -->
+	<div id="addWorkMemo" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">备忘提醒</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">标题</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-memotitle"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">日期</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-workmemo-date"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">内容</label>
+							<div class="col-sm-6">
+								<textarea class="form-control" rows="4" id='i-memo'></textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="showMemo()">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<!-- Add Employee Modal -->
 	<div id="addEmployee" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog">
@@ -214,7 +262,6 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 					<button type="button" class="btn btn-primary">确定</button>
 				</div>
 			</div>
@@ -230,52 +277,741 @@
 					<h4 class="modal-title">员工列表</h4>
 				</div>
 				<div class="modal-body">
-					<table id="tb-employee-list" class="table table-bordered table-hover">
+					<table id="tb-employee-list" class="table table-hover">
 						<thead>
 							<tr>
 								<th data-dynatable-column="name">称呼</th>
 								<th data-dynatable-column="title">职位</th>
 								<th data-dynatable-column="phone">电话</th>
+								<th data-dynatable-column="edit">更新</th>
+								<th data-dynatable-column="remove">删除</th>
 							</tr>
 						</thead>
 						<tbody></tbody>
 					</table>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Punch Card List Modal -->
+	<div id="punchCardList" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">打卡记录</h4>
+				</div>
+				<div class="modal-body">
+					<select class="dynatable-control" style="width: 100px;">
+						<option>大胡子</option>
+						<option>老人家</option>
+					</select>
+					<select class="dynatable-control" style="width: 100px;">
+						<option>四月</option>
+						<option>三月</option>
+						<option>二月</option>
+						<option>一月</option>
+					</select>
+					<select class="dynatable-control" style="width: 100px;">
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+					</select>
+					<table id="tb-punch-card-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="cardDate">日期</th>
+								<th data-dynatable-column="cardTime">打卡时间</th>
+								<th data-dynatable-column="status">状态</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<!-- Add Order Modal -->
+	<div id="addOrder" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">添加订单</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">拍摄日期</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-shot-date"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">关键词</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>女装模拍</option>
+									<option>男装模拍</option>
+									<option>静物</option>
+									<option>挂拍</option>
+									<option>3D</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">店铺名称</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">店铺连接</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">手机号</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">单额</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">摄影师</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>大胡子</option>
+									<option>老人家</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">后期</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>小佛儿</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Add Model Modal -->
+	<div id="addModel" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">模特资料</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-upload-header">上传照片</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file" id="i-upload-header"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-name">称呼</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-name"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">经济公司</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">联系电话</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">费用</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">添加</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Show Model Modal -->
+	<div id="showModel" class="modal fade text-left" style="z-index:1999;" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">模特信息</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-upload-header"></label>
+							<div class="col-sm-4">
+								<img src="../images/header/model/julia.png"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="i-name">称呼</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="i-name" value="Julia" readonly/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">经济公司</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" value="Tokyo Hot" readonly/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">联系电话</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" value="13812345678" readonly/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">费用</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" value="300/小时" readonly/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">档期</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" value="2015-4-4 上午9点" readonly/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Order Status Change Modal -->
+	<div id="orderStatusChange" class="modal fade text-left" style="z-index:1999;" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">订单状态变更</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">订单状态</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>未拍摄</option>
+									<option>拍摄中</option>
+									<option>后期中</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Model List Modal -->
+	<div id="modelList" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">模特信息</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-model-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="header"></th>
+								<th data-dynatable-column="name">称呼</th>
+								<th data-dynatable-column="cost">费用</th>
+								<th data-dynatable-column="status">档期</th>
+								<th data-dynatable-column="edit">更新</th>
+								<th data-dynatable-column="remove">删除</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Select Model Modal -->
+	<div id="selectModel" class="modal fade text-left" style="z-index:1999;" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">指定模特</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-select-model-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="header"></th>
+								<th data-dynatable-column="name">称呼</th>
+								<th data-dynatable-column="cost">费用</th>
+								<th data-dynatable-column="setLink"></th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Order List Modal -->
+	<div id="orderList" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" style="width:800px;">
+			<div class="modal-content modal-lg">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">订单列表</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-order-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="no">单号</th>
+								<th data-dynatable-column="date">拍摄日期</th>
+								<th data-dynatable-column="keyword">关键词</th>
+								<th data-dynatable-column="tbshop">店铺</th>
+								<th data-dynatable-column="model">模特</th>
+								<th data-dynatable-column="photographer">摄影师</th>
+								<th data-dynatable-column="postproduction">后期</th>
+								<th data-dynatable-column="status">状态</th>
+								<th data-dynatable-column="detail">详情</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- select Order Modal -->
+	<div id="selectOrder" class="modal fade text-left" style="z-index:1999;" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">选择订单</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-select-order-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="no">单号</th>
+								<th data-dynatable-column="date">拍摄日期</th>
+								<th data-dynatable-column="keyword">关键词</th>
+								<th data-dynatable-column="tbshop">店铺</th>
+								<th data-dynatable-column="setLink"></th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Post Production Upload Modal -->
+	<div id="postProductionUpload" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">原片上传</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">订单号</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>O90001</option>
+									<option>O90002</option>
+									<option>O90003</option>
+									<option>O90004</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">设计师</label>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>老人家</option>
+									<option>小佛儿</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片1</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片2</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片3</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片4</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片5</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片6</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片7</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">原片8</label>
+							<div class="col-sm-4">
+								<input class="btn btn-primary" type="file"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">上传</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Post Production Process List Modal -->
+	<div id="postProcessList" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header orange-model-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">后期进度</h4>
+				</div>
+				<div class="modal-body">
+					<table id="tb-post-process-list" class="table table-hover">
+						<thead>
+							<tr>
+								<th data-dynatable-column="orderNo">单号</th>
+								<th data-dynatable-column="designer">设计师</th>
+								<th data-dynatable-column="processCount">修图中</th>
+								<th data-dynatable-column="verifyCount">待审核</th>
+								<th data-dynatable-column="completeCount">已完成</th>
+								<th data-dynatable-column="hurryLink"></th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </div>
 </body>
 <script src="../js/svg/classie.js"></script>
+<!--
 <script src="../js/svg/sidebar.js"></script>
+-->
 <script src="../js/notification/notificationFx.js"></script>
 <script src="../js/notification/corner-expand.js"></script>
+<script src="../js/notification/thumbslider.js"></script>
+<script src="../js/notification/bouncyflip.js"></script>
 <script>
+	var thumbslider = new NotificationThumbslider();
+	var noticememo = new NotificationMemo();
+	
+	function hurryWarning() {
+		thumbslider.showMessage("订单O90004快一点，我等到花儿都谢了！");
+	}
+	
+	function showMemo() {
+		noticememo.showMemo($("#i-memotitle").text(), $("#i-memo").text());
+	}
+	
+	var postProcessList = [
+		{
+			"orderNo": "O90001",
+			"designer": "老人家",
+			"processCount": "<span style='color:#CD0000;'>3</span>",
+			"verifyCount": "<span style='color:#FFD700;'>3</span>",
+			"completeCount": "<span style='color:#00CD00;'>2</span>",
+			"hurryLink": "<a data-dismiss='modal' onclick='hurryWarning()'>催一下</a>"
+		},
+		{
+			"orderNo": "O90002",
+			"designer": "老人家",
+			"processCount": "<span style='color:#CD0000;'>8</span>",
+			"verifyCount": "<span style='color:#FFD700;'>0</span>",
+			"completeCount": "<span style='color:#00CD00;'>0</span>",
+			"hurryLink": "<a>催一下</a>"
+		},
+		{
+			"orderNo": "O90003",
+			"designer": "老人家",
+			"processCount": "<span style='color:#CD0000;'>0</span>",
+			"verifyCount": "<span style='color:#FFD700;'>0</span>",
+			"completeCount": "<span style='color:#00CD00;'>8</span>",
+			"hurryLink": "<a>催一下</a>"
+		},
+	];
+	
+	$('#tb-post-process-list').dynatable({
+		dataset: {
+			records: postProcessList
+		}
+	});
+	
 	var employeeList = [
 		{
 			"name": "大胡子",
 			"title": "摄影师",
-			"phone": "13812345678"
+			"phone": "13812345678",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
 		},
 		{
 			"name": "老人家",
 			"title": "后期",
-			"phone": "13812345678"
+			"phone": "13812345678",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
 		},
 		{
 			"name": "小佛儿",
 			"title": "其他",
-			"phone": "13812345678"
+			"phone": "13812345678",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
 		}
 	];
+	
+	var punchCardList = [
+		{
+			"cardDate": "2015-4-1",
+			"cardTime": "上午8点30分",
+			"status": "<span class='card-status'>正常</span>"
+		},
+		{
+			"cardDate": "2015-4-2",
+			"cardTime": "上午7点30分",
+			"status": "<span class='card-status'>勤奋</span>"
+		},
+		{
+			"cardDate": "2015-4-3",
+			"cardTime": "上午9点30分",
+			"status": "<span class='card-status'>懒惰</span>"
+		},
+		{
+			"cardDate": "2015-4-4",
+			"cardTime": "上午8点25分",
+			"status": "<span class='card-status'>正常</span>"
+		}
+	];
+	
+	var orderList = [
+		{
+			"no": "O90001",
+			"date": "2015-4-1",
+			"keyword": "女装模拍",
+			"tbshop": "老人的店",
+			"photographer": "大胡子",
+			"model": "<a data-toggle='modal' data-target='#selectModel'>未指定</a>",
+			"setLink": "<a data-dismiss='modal'>就拍这单</a>",
+			"postproduction": "小佛儿",
+			"status": "<a data-toggle='modal' data-target='#orderStatusChange'><span class='order-status'>未拍摄</span></a>",
+			"detail": "<a><i class='fa fa-fw fa-edit'></i></a>"
+		},
+		{
+			"no": "O90002",
+			"date": "2015-4-1",
+			"keyword": "女装模拍",
+			"tbshop": "老人的店",
+			"photographer": "大胡子",
+			"model": "<a data-toggle='modal' data-target='#showModel'>Julia</a>",
+			"setLink": "<a data-dismiss='modal'>就拍这单</a>",
+			"postproduction": "小佛儿",
+			"status": "<a data-toggle='modal' data-target='#orderStatusChange'><span class='order-status'>拍摄中</span></a>",
+			"detail": "<a><i class='fa fa-fw fa-edit'></i></a>"
+		},
+		{
+			"no": "O90003",
+			"date": "2015-4-1",
+			"keyword": "女装模拍",
+			"tbshop": "老人的店",
+			"photographer": "大胡子",
+			"model": "<a>东尼大木</a>",
+			"setLink": "<a data-dismiss='modal'>就拍这单</a>",
+			"postproduction": "小佛儿",
+			"status": "<a data-toggle='modal' data-target='#orderStatusChange'><span class='order-status'>后期中</span></a>",
+			"detail": "<a><i class='fa fa-fw fa-edit'></i></a>"
+		},
+		{
+			"no": "O90003",
+			"date": "2015-4-1",
+			"keyword": "女装模拍",
+			"tbshop": "老人的店",
+			"photographer": "大胡子",
+			"model": "<a>未指定</a>",
+			"setLink": "<a data-dismiss='modal'>就拍这单</a>",
+			"postproduction": "小佛儿",
+			"status": "<a data-toggle='modal' data-target='#orderStatusChange'><span class='order-status'>完成</span></a>",
+			"detail": "<a><i class='fa fa-fw fa-edit'></i></a>"
+		}
+	];
+								
+	var modelList = [
+		{
+			"header": "<img src='../images/header/model/real.png'/>",
+			"name": "冲田杏梨",
+			"cost": "300/小时",
+			"setLink": "<a data-dismiss='modal'>就是她了</a>",
+			"status": "<a data-toggle='modal' data-target='#selectOrder'>空档</a>",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
+		},
+		{
+			"header": "<img src='../images/header/model/julia.png'/>",
+			"name": "Julia",
+			"cost": "500/小时",
+			"setLink": "<a data-dismiss='modal'>就是她了</a>",
+			"status": "<a>已约</a>",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
+		},
+		{
+			"header": "<img src='../images/header/model/jay.png'/>",
+			"name": "东尼大木",
+			"cost": "100/小时",
+			"setLink": "<a data-dismiss='modal'>就是他了</a>",
+			"status": "<a data-toggle='modal' data-target='#selectOrder'>空挡</a>",
+			"edit": "<a><i class='fa fa-fw fa-edit'></i></a>",
+			"remove": "<a><i class='fa fa-fw fa-remove'></i></a>"
+		},
+	];
+	
+	function testEdit() {
+		alert("Fuck You!");
+	}
+
+	function statusTrRender(className, statusMap) {
+		$("." + className).each(function(index) {
+			var status = this.innerHTML;
+			var tr = this.parentNode.parentNode.parentNode;
+			if (statusMap[status]) {
+				tr.className = statusMap[status];
+			}
+		}); 
+	}
+	
+	function statusTdRender(className, statusMap) {
+		$("." + className).each(function(index) {
+			var status = this.innerHTML;
+			if (statusMap[status]) {
+				this.style.color = statusMap[status];
+			}
+		}); 
+	}
 	
 	$('#tb-employee-list').dynatable({
 		dataset: {
 			records: employeeList
 		}
 	});
+	
+	$('#tb-punch-card-list').dynatable({
+		features: {
+			paginate: false,
+			search: false
+		},
+		dataset: {
+			records: punchCardList
+		}
+	});
+	statusTdRender("card-status", {"勤奋":"#00CD00", "懒惰":"#FF3030"});
+	
+	$('#tb-order-list').dynatable({
+		dataset: {
+			records: orderList
+		}
+	});
+	statusTrRender("order-status", {"拍摄中":"info", "后期中":"warning", "完成":"success"});
+	
+	$('#tb-model-list').dynatable({
+		dataset: {
+			records: modelList
+		}
+	});
+	
+	$('#tb-select-model-list').dynatable({
+		dataset: {
+			records: modelList
+		}
+	});
+	
+	$('#tb-select-order-list').dynatable({
+		dataset: {
+			records: orderList
+		}
+	});
+	
+	$('#i-shot-date').datepicker();
+	$('#i-workmemo-date').datepicker();
 </script>
 </html>

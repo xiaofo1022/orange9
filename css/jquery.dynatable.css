@@ -8,13 +8,17 @@
  *
  * Date: Tue Jan 02 2014
  */
-th {
+td img {
+  width: 50px;
+} 
+ 
+th.dynatable-head {
   background: #006a72;
 }
-th a {
+th.dynatable-head a {
   color: #fff;
 }
-th a:hover {
+th.dynatable-head a:hover {
   color: #fff;
   text-decoration: underline;
 }
