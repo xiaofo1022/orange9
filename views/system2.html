@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Orange 9 System</title>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/system.css"/>
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-default.css" />
 <link rel="stylesheet" type="text/css" href="../css/notification/ns-style-other.css" />
 <link rel="stylesheet" type="text/css" href="../css/jquery-ui/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="../css/sidebar/component.css" />
-<link rel="stylesheet" type="text/css" href="../css/progress/style.css">
-<link rel="stylesheet" type="text/css" href="../css/progress/number-pb.css">
+<link rel="stylesheet" type="text/css" href="../css/progress/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/progress/number-pb.css" />
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery-ui.js"></script>
@@ -17,108 +18,21 @@
 <script src="../js/notification/modernizr.custom.js"></script>
 <script src="../js/progress/jquery.velocity.min.js"></script>
 <script src="../js/progress/number-pb.js"></script>
-<style>
-	.login-header {
-		color: #FEC504;
-		font-size: 26px;
-		font-weight: bold;
-		margin: 0;
-		margin-left: -15px;
-	}
-	
-	.login-header span {
-		color: #000000;
-	}
-	
-	.orange-color {
-		color: #FEC504;
-	}
-	
-	.clear {
-		clear: both;
-	}
-	
-	.nav-btn {
-		position:absolute;
-		left:10px;
-		top:10px;
-		border-radius:0;
-	}
-	
-	span.warning {
-		color: red;
-	}
-	
-	div.employee-block {
-		border-bottom: 2px solid #FEC504;
-		margin-left: 100px;
-		margin-top: 10px;
-		padding: 10px;
-	}
-	
-	div.employee-header {
-		border: 2px solid #FEC504;
-		text-align: center;
-		width: 100px;
-		padding: 10px;
-		float: left;
-	}
-	
-	div.employee-header img {
-		width: 70px;
-	}
-	
-	div.employee-process {
-		float: left;
-		width: 80%;
-		padding: 10px;
-	}
-	
-	div.employee-clock {
-		float: left;
-		padding: 10px;
-		clear: right;
-		width: 80%;
-	}
-	
-	div.employee-performance {
-		float: left;
-		width: 80%;
-		margin-left: 10px;
-	}
-	
-	div.employee-performance span {
-		font-size: 20px;
-		font-weight: bold;
-		color: #FEC504;
-	}
-	
-	div.tb {
-		border:1px solid gray;
-	}
-	
-	.btn-add-employee {
-		position:absolute;
-		top:57px;
-		left:10px;
-	}
-</style>
 </head>
 <body>
-
 <div id="st-container" class="st-container">
 <div class="st-pusher">
 	<nav class="st-menu st-effect-3">
 		<h2 class="icon icon-lab"></h2>
 		<ul>
 			<li><a class="icon icon-data" href="#">员工管理</a></li>
-			<li><a class="icon icon-location" href="#">模特资料</a></li>
-			<li><a class="icon icon-study" href="#">订单统计</a></li>
-			<li><a class="icon icon-photo" href="#">后期进度</a></li>
+			<li><a class="icon icon-study" href="system2order.html">订单统计</a></li>
+			<li><a class="icon icon-photo" href="system2post.html">后期进度</a></li>
+			<li><a class="icon icon-location" href="system2model.html">模特资料</a></li>
 		</ul>
 	</nav>
 	
-	<div id="st-trigger-effects" class="column">
+	<div id="st-trigger-effects">
 		<button class="btn btn-warning nav-btn" data-effect="st-effect-3">
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		</button>
@@ -209,44 +123,6 @@
 	
 	<div class="employee-block">
 		<div class="employee-header">
-			<img src="../images/header/old_man.png"/>
-			<p>老人家</p>
-			<p>设计师</p>
-		</div>
-			
-		<div class="employee-process">
-			<section id="sample-pb">
-				<article class="num-progress">
-					<h4 id="t-lr" class="num-progress-title"></h4>
-					<div id="b-lr" class="number-pb">
-						<div class="number-pb-shown"></div>
-						<div class="number-pb-num">0</div>
-					</div>
-				</article>
-			</section>
-		</div>
-		
-		<div class="employee-clock">
-			本月考勤：
-			<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
-				data-content="2015-4-1: 8:23<br/>2015-4-2: 8:20<br/>2015-4-3: 8:19">
-				正常3天
-			</button>
-			<button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
-				data-content="2015-4-4: <span class='warning'>8:46</span><br/>2015-4-5: <span class='warning'>8:31</span>">
-				迟到2天
-			</button>
-		</div>
-		
-		<div class="employee-performance">
-			本月绩效：<span>99.0元</span>
-		</div>
-		
-		<div class="clear"></div>
-	</div>
-	
-	<div class="employee-block">
-		<div class="employee-header">
 			<img src="../images/header/shenyulin.png"/>
 			<p>沈玉琳</p>
 			<p>设计师</p>
@@ -274,6 +150,10 @@
 				data-content="">
 				迟到0天
 			</button>
+			<button type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+				data-content="2015-4-6: <span class='info'>拉肚子</span>">
+				请假1天
+			</button>
 		</div>
 		
 		<div class="employee-performance">
@@ -285,9 +165,51 @@
 	
 	<div class="employee-block">
 		<div class="employee-header">
+			<img src="../images/header/old_man.png"/>
+			<p>老人家</p>
+			<p>设计师</p>
+		</div>
+			
+		<div class="employee-process">
+			<section id="sample-pb">
+				<article class="num-progress">
+					<h4 id="t-lr" class="num-progress-title"></h4>
+					<div id="b-lr" class="number-pb">
+						<div class="number-pb-shown"></div>
+						<div class="number-pb-num">0</div>
+					</div>
+				</article>
+			</section>
+		</div>
+		
+		<div class="employee-clock">
+			本月考勤：
+			<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+				data-content="2015-4-1: 8:23<br/>2015-4-2: 8:20<br/>2015-4-3: 8:19">
+				正常3天
+			</button>
+			<button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+				data-content="2015-4-4: <span class='danger'>8:46</span><br/>2015-4-5: <span class='danger'>8:31</span>">
+				迟到2天
+			</button>
+			<button type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+				data-content="">
+				请假0天
+			</button>
+		</div>
+		
+		<div class="employee-performance">
+			本月绩效：<span>99.0元</span>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
+	
+	<div class="employee-block">
+		<div class="employee-header">
 			<img src="../images/header/zhanglidong.png"/>
 			<p>张立东</p>
-			<p>设计师</p>
+			<p>摄影师</p>
 		</div>
 			
 		<div class="employee-process">
@@ -309,8 +231,12 @@
 				正常3天
 			</button>
 			<button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
-				data-content="2015-4-4: <span class='warning'>8:46</span><br/>2015-4-5: <span class='warning'>8:31</span>">
+				data-content="2015-4-4: <span class='danger'>8:46</span><br/>2015-4-5: <span class='danger'>8:31</span>">
 				迟到2天
+			</button>
+			<button type="button" class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+				data-content="">
+				请假0天
 			</button>
 		</div>
 		
@@ -333,13 +259,13 @@
 		$('[data-toggle="popover"]').popover({html:true})
 	});
 	
-	var plr = new Processer("t-lr", "b-lr");
+	var plr = new Processer("t-lr", "b-lr", "本月进度（共100单）");
 	plr.run(60, 100);
 	
-	var psyl = new Processer("t-syl", "b-syl");
+	var psyl = new Processer("t-syl", "b-syl", "本月进度（共100单）");
 	psyl.run(88, 100);
 	
-	var pzld = new Processer("t-zld", "b-zld");
+	var pzld = new Processer("t-zld", "b-zld", "本月进度（共100单）");
 	pzld.run(12, 100);
 </script>
 </body>

@@ -1,13 +1,15 @@
-﻿var Processer = function(title, bar) {
+﻿var Processer = function(title, bar, titleLabel) {
 	this.title = title;
 	this.bar = bar;
+	this.titleLabel = titleLabel;
 };
 
 Processer.prototype = {
 	run: function(num, count) {
-		var controlTitle = $('#' + this.title).text('本月进度（共' + count + '单）');
+		var controlTitle = $('#' + this.title).text(this.titleLabel);
 		var controlBar = $('#' + this.bar).NumberProgressBar({
-		  duration: 12000,
+		  duration: 6000,
+		  max: count,
 		  current: num
 		});
 	}

@@ -6,9 +6,15 @@
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
+  margin: 0px; 
+  height: 100%;
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
 }
 article,
 aside,
@@ -39,6 +45,13 @@ audio:not([controls]) {
 [hidden],
 template {
   display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -255,14 +268,10 @@ th {
   }
 }
 @font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: "Microsoft YaHei", 'codropsicons';
-	src:url('../fonts/codropsicons/codropsicons.eot');
-	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -888,7 +897,18 @@ th {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+html {
+  font-size: 10px;
 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
 input,
 button,
 select,
@@ -896,40 +916,6 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-body {
-	font-size: 14px;
-	color: #333;
-	background: #FCFCFC;
-	font-weight: 400;
-	font-family: "Microsoft YaHei", 'Raleway', Arial, sans-serif;
-}
-
-a {
-	color: #B24E51;
-	text-decoration: none;
-}
-
-a:hover,
-a:focus {
-	color: #afb3b8;
-	outline: none;
-}
-/*
-html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
 }
 a {
   color: #428bca;
@@ -945,7 +931,6 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-*/
 figure {
   margin: 0;
 }
@@ -2139,7 +2124,7 @@ th {
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;

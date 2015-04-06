@@ -1,0 +1,111 @@
+﻿.login-header {
+	color: #FEC504;
+	font-size: 26px;
+	font-weight: bold;
+	margin: 0;
+	margin-left: -15px;
+}
+
+div.hidden {
+	display: none;
+}
+
+.login-header span {
+	color: #000000;
+}
+
+.orange-color {
+	color: #FEC504;
+}
+
+.clear {
+	clear: both;
+}
+
+.nav-btn {
+	position:absolute;
+	left:10px;
+	top:10px;
+	border-radius:0;
+}
+
+.fleft {
+	float: left;
+}
+
+span.danger {
+	color: #D9534F;
+}
+
+span.info {
+	color: #5BC0DE;
+}
+
+div.employee-block {
+	border-bottom: 2px solid #FEC504;
+	margin-left: 100px;
+	margin-top: 10px;
+	padding: 10px;
+	width: 80%;
+}
+
+div.employee-header {
+	border: 2px solid #FEC504;
+	text-align: center;
+	width: 100px;
+	padding: 10px;
+	float: left;
+}
+
+div.employee-header img {
+	width: 70px;
+}
+
+div.employee-process {
+	float: left;
+	width: 80%;
+	padding: 10px;
+}
+
+div.employee-clock {
+	float: left;
+	padding: 10px;
+	clear: right;
+	width: 80%;
+}
+
+div.employee-performance {
+	float: left;
+	width: 80%;
+	margin-left: 10px;
+}
+
+div.employee-performance span {
+	font-size: 20px;
+	font-weight: bold;
+	color: #FEC504;
+}
+
+div.tb {
+	border:1px solid gray;
+}
+
+div.tbr {
+	border:1px solid red;
+}
+
+.btn-add-employee {
+	position:absolute;
+	top:57px;
+	left:10px;
+}
+
+p.model-label {
+	font-size: 20px;
+	font-weight: bold;
+	color: #FEC504;
+}
+
+p.model-label span {
+	color: #000;
+}
