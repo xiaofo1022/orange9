@@ -1,5 +1,5 @@
 ﻿.login-header {
-	color: #FEC504;
+	color: #F0AD4E;
 	font-size: 26px;
 	font-weight: bold;
 	margin: 0;
@@ -15,7 +15,7 @@ div.hidden {
 }
 
 .orange-color {
-	color: #FEC504;
+	color: #F0AD4E;
 }
 
 .clear {
@@ -42,7 +42,8 @@ span.info {
 }
 
 div.employee-block {
-	border-bottom: 2px solid #FEC504;
+	box-shadow: 0px 0px 5px rgba(240, 173, 78, 0.8);
+	border-radius: 4px;
 	margin-left: 100px;
 	margin-top: 10px;
 	padding: 10px;
@@ -50,7 +51,8 @@ div.employee-block {
 }
 
 div.employee-header {
-	border: 2px solid #FEC504;
+	border: 1px solid #F0AD4E;
+	border-radius: 4px;
 	text-align: center;
 	width: 100px;
 	padding: 10px;
@@ -59,6 +61,11 @@ div.employee-header {
 
 div.employee-header img {
 	width: 70px;
+}
+
+div.employee-header p {
+	font-size: 14px;
+	margin-bottom: 0px;
 }
 
 div.employee-process {
@@ -76,14 +83,19 @@ div.employee-clock {
 
 div.employee-performance {
 	float: left;
-	width: 80%;
+	width: 397px;
 	margin-left: 10px;
+}
+
+div.employee-performance button {
+	float: right;
+	margin-top:-5px;
 }
 
 div.employee-performance span {
 	font-size: 20px;
 	font-weight: bold;
-	color: #FEC504;
+	color: #F0AD4E;
 }
 
 div.tb {
@@ -101,11 +113,30 @@ div.tbr {
 }
 
 p.model-label {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
-	color: #FEC504;
+	color: #F0AD4E;
 }
 
 p.model-label span {
 	color: #000;
+}
+
+div.chart-control1 {
+	width: 100px;
+	float: left;
+	margin-right: 10px;
+}
+
+div.chart-control2 {
+	width: 100px;
+	float: left;
+}
+
+div.card-chart {
+	width: 600px;
+	height: 400px;
+	margin-left: -30px;
+	margin-top: 20px;
+	margin-bottom: -40px;
 }

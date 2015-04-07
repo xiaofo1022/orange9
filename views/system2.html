@@ -55,7 +55,7 @@
 			<div class="modal-content">
 				<div class="modal-header orange-model-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">员工录入</h4>
+					<h4 class="modal-title">员工资料</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal">
@@ -121,11 +121,62 @@
 		</div>
 	</div>
 	
+	<!-- Card Statistics -->
+	<div id="cardStatistics" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">考勤统计</h4>
+				</div>
+				<div class="modal-body">	
+					<div>
+						<div class="chart-control1">
+							<select class="form-control">
+								<option>2015</option>
+								<option>2014</option>
+								<option>2013</option>
+								<option>2012</option>
+							</select>
+						</div>
+						<div class="chart-control2">
+							<select class="form-control" onchange="changeCardChart()">
+								<option>4月</option>
+								<option>3月</option>
+								<option>2月</option>
+								<option>1月</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div id="cardChartBody" class="card-chart"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Performance Statistics -->
+	<div id="performanceStatistics" class="modal fade text-left" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">绩效统计</h4>
+				</div>
+				<div class="modal-body">	
+					<div id="performanceCardBody" style="width:860px;height:460px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="employee-block">
 		<div class="employee-header">
 			<img src="../images/header/shenyulin.png"/>
 			<p>沈玉琳</p>
 			<p>设计师</p>
+			<button class="btn btn-info btn-xs" data-toggle="modal" data-target="#addEmployee">编辑</button>
+			<button class="btn btn-danger btn-xs">删除</button>
 		</div>
 			
 		<div class="employee-process">
@@ -154,10 +205,16 @@
 				data-content="2015-4-6: <span class='info'>拉肚子</span>">
 				请假1天
 			</button>
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#cardStatistics">
+				考勤统计
+			</button>
 		</div>
 		
 		<div class="employee-performance">
 			本月绩效：<span>230.0元</span>
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#performanceStatistics">
+				绩效统计
+			</button>
 		</div>
 		
 		<div class="clear"></div>
@@ -168,6 +225,8 @@
 			<img src="../images/header/old_man.png"/>
 			<p>老人家</p>
 			<p>设计师</p>
+			<button class="btn btn-info btn-xs" data-toggle="modal" data-target="#addEmployee">编辑</button>
+			<button class="btn btn-danger btn-xs">删除</button>
 		</div>
 			
 		<div class="employee-process">
@@ -196,10 +255,16 @@
 				data-content="">
 				请假0天
 			</button>
+			<button type="button" class="btn btn-success">
+				考勤统计
+			</button>
 		</div>
 		
 		<div class="employee-performance">
 			本月绩效：<span>99.0元</span>
+			<button type="button" class="btn btn-success">
+				绩效统计
+			</button>
 		</div>
 		
 		<div class="clear"></div>
@@ -210,6 +275,8 @@
 			<img src="../images/header/zhanglidong.png"/>
 			<p>张立东</p>
 			<p>摄影师</p>
+			<button class="btn btn-info btn-xs" data-toggle="modal" data-target="#addEmployee">编辑</button>
+			<button class="btn btn-danger btn-xs">删除</button>
 		</div>
 			
 		<div class="employee-process">
@@ -238,10 +305,16 @@
 				data-content="">
 				请假0天
 			</button>
+			<button type="button" class="btn btn-success">
+				考勤统计
+			</button>
 		</div>
 		
 		<div class="employee-performance">
 			本月绩效：<span>19.0元</span>
+			<button type="button" class="btn btn-success">
+				绩效统计
+			</button>
 		</div>
 		
 		<div class="clear"></div>
@@ -254,6 +327,7 @@
 <script src="../js/notification/thumbslider.js"></script>
 <script src="../js/sidebar/sidebarEffects.js"></script>
 <script src="../js/progress/processer.js"></script>
+<script src="../js/chart/echarts.js"></script>
 <script>
 	$(function () {
 		$('[data-toggle="popover"]').popover({html:true})
@@ -267,6 +341,176 @@
 	
 	var pzld = new Processer("t-zld", "b-zld", "本月进度（共100单）");
 	pzld.run(12, 100);
+	
+	require.config({
+		paths: {
+			echarts: '../js/chart'
+		}
+	});
+	
+	function changeCardChart() {
+		createCardChart("2015年3月考勤统计", "沈玉琳", [28, 1, 2]);
+	}
+	
+	createCardChart("2015年四月考勤统计", "沈玉琳", [5, 2, 0]);
+	
+	function createCardChart(title, employee, data) {
+		require(
+			[
+				'echarts',
+				'echarts/theme/macarons',
+				'echarts/chart/line',
+				'echarts/chart/bar'
+			],
+			function (ec, theme) {
+				var cardChart = ec.init(document.getElementById('cardChartBody'), theme); 
+				
+				var option = {
+					title: {
+						x: 'center',
+						text: title,
+						subtext: employee
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: cardChartTooltipFormatter
+					},
+					toolbox: {
+						show: true,
+						feature: {
+							restore: {show: true},
+							saveAsImage: {show: true}
+						}
+					},
+					calculable: true,
+					grid: {
+						borderWidth: 0,
+						y: 80,
+						y2: 60
+					},
+					xAxis: [
+						{
+							type: 'category',
+							show: false,
+							data: ['正常', '迟到', '请假']
+						}
+					],
+					yAxis: [
+						{
+							type: 'value',
+							show: false
+						}
+					],
+					series: [
+						{
+							name: '考勤统计',
+							type: 'bar',
+							itemStyle: {
+								normal: {
+									color: function(params) {
+										var colorList = ['#5CB85C', '#D9534F', '#5BC0DE'];
+										return colorList[params.dataIndex]
+									},
+									label: {
+										show: true,
+										position: 'top',
+										formatter: '{b}\n{c}次'
+									}
+								}
+							},
+							data: data
+						}
+					]
+				};
+
+				cardChart.setOption(option); 
+			}
+		);
+	}
+	
+	createPerformanceChart();
+	
+	function createPerformanceChart() {
+		require(
+			[
+				'echarts',
+				'echarts/theme/macarons',
+				'echarts/chart/line',
+				'echarts/chart/bar'
+			],
+			function (ec, theme) {
+				var chart = ec.init(document.getElementById('performanceCardBody'), theme);
+				
+				var option = {
+					title : {
+						text: '2014年绩效统计',
+						subtext: '沈玉琳'
+					},
+					tooltip : {
+						trigger: 'axis'
+					},
+					toolbox: {
+						show : true,
+						feature : {
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							boundaryGap : false,
+							data : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value',
+							min: 0,
+							max: 1000,
+							axisLabel : {
+								formatter: '{value}单'
+							}
+						}
+					],
+					series : [
+						{
+							name:'业绩统计',
+							type:'line',
+							data:[560, 510, 420, 380, 590, 570, 320, 610, 720, 730, 510, 410],
+							markPoint : {
+								data : [
+									{type : 'max', name: '最高'},
+									{type : 'min', name: '最低'}
+								]
+							},
+							markLine : {
+								data : [
+									{type : 'average', name: '平均'}
+								]
+							}
+						}
+					]
+				};
+				
+				chart.setOption(option); 
+			}
+		);
+	}
+	
+	function cardChartTooltipFormatter(params, ticket, callback) {
+		switch (params.name) {
+			case "正常":
+				return "4月1日: 8点23分<br/>4月2日: 8点12分<br/>4月3日: 8点22分<br/>4月4日: 8点12分<br/>4月5日: 8点29分";
+			case "迟到":
+				return "4月6日: <span class='danger'>8点37分</span><br/>4月7日: <span class='danger'>8点40分</span>";
+			case "请假":
+				return "4月6日: <span class='info'>病假</span><br/>4月7日: <span class='info'>家里有事</span>";
+			default:
+				return "";
+		}
+	}
 </script>
 </body>
 </html>

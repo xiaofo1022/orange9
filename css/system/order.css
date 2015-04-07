@@ -1,7 +1,7 @@
 ﻿p.order-label {
 	font-size: 16px;
 	font-weight: bold;
-	color: #FEC504;
+	color: #F0AD4E;
 	padding-right: 5px;
 	display: inline;
 }
@@ -14,7 +14,8 @@ div.order-block {
 	margin-left: 150px;
 	margin-bottom: 10px;
 	padding: 10px;
-	border-bottom: 2px solid #FEC504;
+	box-shadow: 0px 0px 5px rgba(240, 173, 78, 0.8);
+	border-radius: 4px;
 	width: 80%;
 }
 
@@ -60,7 +61,7 @@ div.order-info {
 }
 
 div.photograhper-block {
-	border: 1px solid #FEC504;
+	border: 1px solid #F0AD4E;
 	padding: 10px;
 	margin-bottom: 10px;
 }
