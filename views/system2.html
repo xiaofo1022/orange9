@@ -193,7 +193,7 @@
 		
 		<div class="employee-clock">
 			本月考勤：
-			<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
+			<button id="btn-hover" type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-trigger="focus"
 				data-content="2015-4-1: 8:23<br/>2015-4-2: 8:20<br/>2015-4-3: 8:19<br/>2015-4-4: 8:19<br/>2015-4-5: 8:19">
 				正常5天
 			</button>
@@ -332,6 +332,8 @@
 	$(function () {
 		$('[data-toggle="popover"]').popover({html:true})
 	});
+	
+	$("#btn-hover").mouseover();
 	
 	var plr = new Processer("t-lr", "b-lr", "本月进度（共100单）");
 	plr.run(60, 100);
