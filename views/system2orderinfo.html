@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9 System</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/system/order.css"/>
+<link rel="stylesheet" type="text/css" href="../css/sidebar/component.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui/jquery-ui.css" />
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/notification/modernizr.custom.js"></script>
+<style>
+div.order-date-header {
+	border:1px solid #F0AD4E;
+	color:white;
+	font-weight:bold;
+	font-size:20px;
+	width:14%;
+	height:40px;
+	padding-top:3px;
+	margin-right:-1px;
+	background-color:#F0AD4E;
+	float:left;
+}
+
+div.order-date-block {
+	border:1px solid #F0AD4E;
+	font-size:14px;
+	width:14%;
+	min-height:100px;
+	margin-right:-1px;
+	margin-top:-1px;
+	background-color:#FFF;
+	float:left;
+}
+div.order-date-row {
+	width:100%;
+	padding-left:5px;
+}
+div.order-date-info {
+	text-align: left;
+}
+div.order-date-info img {
+	width: 30px;
+	height: 30px;
+}
+div.order-date-info p {
+	margin-bottom: 0;
+}
+div.order-date-info a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+div.am {
+	border-bottom:1px solid #F0AD4E;
+}
+div.order-summary-block {
+	text-align:center;
+	width:90%;
+	margin-left:100px;
+}
+p.summary-label {
+	font-size: 18px;
+	font-weight: bold;
+	color: #F0AD4E;
+}
+
+p.summary-label a {
+	font-size: 14px;
+}
+
+p.summary-label span {
+	margin:0 20px;
+}
+
+p.summary-label a:hover {
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div id="st-container" class="st-container">
+<div class="st-pusher">
+	<div style="text-align:center;">
+		<p class="login-header"><span>ORANGE</span> 9 SYSTEM</p>
+	</div>
+	
+	<nav class="st-menu st-effect-3">
+		<h2 class="icon icon-lab"></h2>
+		<ul>
+			<li><a class="icon icon-data" href="#">订单一览</a></li>
+			<li><a class="icon icon-study" href="#">拍摄中(5)</a></li>
+			<li><a class="icon icon-study" href="#">导图中(3)</a></li>
+			<li><a class="icon icon-photo" href="#">    修皮肤及褶皱(10)</a></li>
+			<li><a class="icon icon-photo" href="#">    修背景(4)</a></li>
+			<li><a class="icon icon-photo" href="#">    截图液化(3)</a></li>
+			<li><a class="icon icon-location" href="#">等待审图(8)</a></li>
+			<li><a class="icon icon-location" href="#">完成(11)</a></li>
+			<li><a class="icon icon-location" href="#">员工管理</a></li>
+		</ul>
+	</nav>
+	
+	<div id="st-trigger-effects">
+		<button class="btn btn-warning nav-btn" data-effect="st-effect-3">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		</button>
+	</div>
+	
+	<button class="btn btn-warning btn-add-employee" data-toggle="modal" data-target="#addOrder">添加订单</button>
+	
+	<div class="order-summary-block">
+		<p class="summary-label">
+			<a>上个月</a>
+			<span>四月订单一览</span>
+			<a>下个月</a>
+		</p>
+		<div>
+			<div class="order-date-row">
+				<div class="order-date-header">日</div>
+				<div class="order-date-header">一</div>
+				<div class="order-date-header">二</div>
+				<div class="order-date-header">三</div>
+				<div class="order-date-header">四</div>
+				<div class="order-date-header">五</div>
+				<div class="order-date-header">六</div>
+				<div class="clear"></div>
+			</div>
+			<div class="order-date-row">
+				<div class="order-date-block"></div>
+				<div class="order-date-block"></div>
+				<div class="order-date-block"></div>
+				<div class="order-date-block">
+					4月1日
+					<div class="order-date-info">
+						<p>上午：<a>@20150401001</a></p>
+						<p>摄影师：<img src="../images/header/boss.png"/>柳海飞</p>
+						<p>助理：<img src="../images/header/old_man.png"/>李学华</p>
+						<p>模特：<img src="../images/header/nana.png"/>娜娜</p>
+					</div>
+				</div>
+				<div class="order-date-block">4月2日</div>
+				<div class="order-date-block">4月3日</div>
+				<div class="order-date-block">4月4日</div>
+				<div class="clear"></div>
+			</div>
+			<div class="order-date-row">
+				<div class="order-date-block">4月5日</div>
+				<div class="order-date-block">4月6日</div>
+				<div class="order-date-block">4月7日</div>
+				<div class="order-date-block">4月8日</div>
+				<div class="order-date-block">4月9日</div>
+				<div class="order-date-block">4月10日</div>
+				<div class="order-date-block">4月11日</div>
+				<div class="clear"></div>
+			</div>
+			<div class="order-date-row">
+				<div class="order-date-block">4月12日</div>
+				<div class="order-date-block">4月13日</div>
+				<div class="order-date-block">4月14日</div>
+				<div class="order-date-block">4月15日</div>
+				<div class="order-date-block">4月16日</div>
+				<div class="order-date-block">4月17日</div>
+				<div class="order-date-block">4月18日</div>
+				<div class="clear"></div>
+			</div>
+			<div class="order-date-row">
+				<div class="order-date-block">4月19日</div>
+				<div class="order-date-block">4月20日</div>
+				<div class="order-date-block">4月21日</div>
+				<div class="order-date-block">4月22日</div>
+				<div class="order-date-block">4月23日</div>
+				<div class="order-date-block">4月24日</div>
+				<div class="order-date-block">4月25日</div>
+				<div class="clear"></div>
+			</div>
+			<div class="order-date-row">
+				<div class="order-date-block">4月26日</div>
+				<div class="order-date-block">4月27日</div>
+				<div class="order-date-block">4月28日</div>
+				<div class="order-date-block">4月29日</div>
+				<div class="order-date-block">4月30日</div>
+				<div class="order-date-block"></div>
+				<div class="order-date-block"></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+<script src="../js/svg/classie.js"></script>
+<script src="../js/sidebar/sidebarEffects.js"></script>
+</body>
+</html>
