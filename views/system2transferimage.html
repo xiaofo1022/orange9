@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orange 9 System</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/system.css"/>
+<link rel="stylesheet" type="text/css" href="../css/system/order.css"/>
+<link rel="stylesheet" type="text/css" href="../css/sidebar/component.css" />
+<script src="../js/jquery-1.11.2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<style>
+p.transfer-label {
+}
+
+p.transfer-label img {
+	width:40px;
+}
+</style>
+</head>
+<body>
+<div id="st-container" class="st-container">
+<div class="st-pusher">
+	<div style="text-align:center;">
+		<p class="login-header"><span>ORANGE</span> 9 SYSTEM</p>
+	</div>
+	
+	<nav class="st-menu st-effect-3">
+		<h2 class="icon icon-lab"></h2>
+		<ul>
+			<li><a class="icon icon-data" href="#">订单一览</a></li>
+			<li><a class="icon icon-study" href="#">拍摄中(5)</a></li>
+			<li><a class="icon icon-study" href="#">导图中(3)</a></li>
+			<li><a class="icon icon-photo" href="#">修皮肤及褶皱(10)</a></li>
+			<li><a class="icon icon-photo" href="#">修背景(4)</a></li>
+			<li><a class="icon icon-photo" href="#">截图液化(3)</a></li>
+			<li><a class="icon icon-location" href="#">等待审图(8)</a></li>
+			<li><a class="icon icon-location" href="#">完成(11)</a></li>
+			<li><a class="icon icon-location" href="#">员工管理</a></li>
+		</ul>
+	</nav>
+	
+	<div id="st-trigger-effects">
+		<button class="btn btn-warning nav-btn" data-effect="st-effect-3">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		</button>
+	</div>
+	
+	<div class="order-block">
+		<p class="model-label transfer-label">
+			单号：<span>O900001</span>
+			<span id="time-label" style="color:#F0AD4E;">剩余时间</span>：<span id="remainTime"></span>
+		</p>
+		<p class="model-label transfer-label">
+			导图人：<img src="../images/header/old_man.png"/><span>李学华</span>
+			<button class="btn btn-danger">催一下</button>
+			<button class="btn btn-success">导图</button>
+		</p>
+		<div class="progress" style="margin-bottom:0;">
+			<div id="time-bar" class="progress-bar progress-bar-success"
+				role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="../js/svg/classie.js"></script>
+<script src="../js/sidebar/sidebarEffects.js"></script>
+<script>
+	var startTime = new Date();
+	var limitSecond = 3 * 60;
+	
+	caculateTime();
+	
+	function caculateTime() {
+		var now = new Date();
+		var diffSecond = Math.floor((now.getTime() - startTime.getTime()) / 1000);
+		var remainSecond = Math.floor(limitSecond - diffSecond);
+		var diffTimeLabel = getDiffTime(Math.abs(remainSecond));
+		var diffPercent = 0;
+		if (remainSecond > 0) {
+			diffPercent = (remainSecond / limitSecond).toFixed(2) * 100;
+			if (diffPercent < 65) {
+				if (!$("#time-bar").hasClass("progress-bar-warning")) {
+					$("#time-bar").removeClass("progress-bar-success");
+					$("#time-bar").addClass("progress-bar-warning");
+				}
+			}
+			if (diffPercent < 35) {
+				if (!$("#time-bar").hasClass("progress-bar-danger")) {
+					$("#time-bar").removeClass("progress-bar-success");
+					$("#time-bar").removeClass("progress-bar-warning");
+					$("#time-bar").addClass("progress-bar-danger");
+					$("#remainTime").css("color", "#D9534F");
+				}
+			}
+		} else {
+			if ($("#time-label").text() == "剩余时间") {
+				$("#time-label").text("已超时")
+			}
+		}
+		$("#time-bar").css("width", diffPercent + "%");
+		$("#remainTime").text(diffTimeLabel);
+		setTimeout(arguments.callee, 1000);
+	}
+	
+	function getDiffTime(totalSecond) {
+		var remainSecond = totalSecond;
+		var diffHour = Math.floor(remainSecond / 3600);
+		remainSecond -= diffHour * 3600;
+		var diffMinute = Math.floor(remainSecond / 60);
+		remainSecond -= diffMinute * 60;
+		var result = "";
+		if (diffHour) {
+			result += diffHour + "小时";
+		}
+		if (diffMinute) {
+			result += diffMinute + "分";
+		}
+		if (remainSecond) {
+			result += remainSecond + "秒";
+		}
+		return result;
+	}
+</script>
+</body>
+</html>
